@@ -1,0 +1,6 @@
+# Input file for tecplot print
+Couette Flow
+distL		1
+jmax		41
+theta		0.5
+

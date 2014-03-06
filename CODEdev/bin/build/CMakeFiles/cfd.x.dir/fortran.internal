@@ -1,0 +1,6 @@
+# The fortran modules provided by this target.
+provides
+ io_m
+ parameters_m
+ simulationsetup_m
+ simulationvars_m
