@@ -5,8 +5,10 @@ MODULE SimulationVars_m
    USE parameters_m, ONLY : wp
    IMPLICIT NONE
 
-   INTEGER :: jmax
-   REAL(KIND=wp), ALLOCATABLE, DIMENSION(:) :: yp, up
-   REAL(KIND=wp) :: distL, theta, time
+   INTEGER :: jmax, iterMax
+   REAL(KIND=wp), ALLOCATABLE, DIMENSION(:) :: yp, up, y, u, &
+                                               uExac, uExacSS
+   REAL(KIND=wp) :: t, dt, dy
+   REAL(KIND=wp) :: uTop, distL, nu, theta, tp, dtp, dyp
 
 END MODULE SimulationVars_m

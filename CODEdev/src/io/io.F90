@@ -19,7 +19,7 @@ CONTAINS
 !-----------------------------------------------------------------------------!
 ! Read input files
 !-----------------------------------------------------------------------------!
-   USE SimulationVars_m, ONLY: jmax, distL, theta
+   USE SimulationVars_m, ONLY: uTop, jmax, distL, nu, theta, dt, iterMax
    IMPLICIT NONE
    INTEGER :: ios
    CHARACTER(LEN=8) :: inputVar
@@ -38,12 +38,20 @@ CONTAINS
    READ(IOunit,*)
    READ(IOunit,'(a)') prjTitle
    WRITE(*,'(4a)') 'Project Title:', '"',TRIM(prjTitle),'"'
+   READ(IOunit,*) inputVar, uTop
+   WRITE(*,'(a,f6.3)') inputVar,uTop
    READ(IOunit,*) inputVar, distL
    WRITE(*,'(a,f6.3)') inputVar,distL
+   READ(IOunit,*) inputVar, nu
+   WRITE(*,'(a,f6.3)') inputVar, nu
    READ(IOunit,*) inputVar, jmax
    WRITE(*,'(a,i6)') inputVar,jmax
    READ(IOunit,*) inputVar, theta
    WRITE(*,'(a,f6.3)') inputVar, theta
+   READ(IOunit,*) inputVar, dt
+   WRITE(*,'(a,f6.3)') inputVar, dt
+   READ(IOunit,*) inputVar, iterMax
+   WRITE(*,'(a,i6)') inputVar,iterMax
 
    END SUBROUTINE ReadInput
 
