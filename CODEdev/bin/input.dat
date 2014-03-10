@@ -3,9 +3,9 @@ Couette Flow
 uTop		1.0
 distL		1.0
 nu		1.0
-jmax		51
-theta		0.0
-dt		0.0
-iterMax		100000
-nIterOut	200
+jmax		101
+theta		1.0
+dt		0.00001
+iterMax		999999
+nIterOut	500
 RMSlimit	1.0e-7

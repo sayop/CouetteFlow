@@ -66,7 +66,8 @@ CONTAINS
          !
          u(j) = uTop * ( y(j)/distL + sin(PI * y(j)/distL) )
       END DO
-
+      
+      WRITE(*,'(a,g15.6)') "### dy = ", dy
       CALL UpdateNonDimVars()   
 
    END SUBROUTINE SetupBCIC

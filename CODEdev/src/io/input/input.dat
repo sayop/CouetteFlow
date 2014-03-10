@@ -6,6 +6,6 @@ nu		1.0
 jmax		51
 theta		0.0
 dt		0.0
-iterMax		10000
+iterMax		999999
 nIterOut	500
 RMSlimit	1.0e-7

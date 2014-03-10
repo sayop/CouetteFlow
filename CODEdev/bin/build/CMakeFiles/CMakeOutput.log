@@ -1,6 +1,6 @@
-The system is: Linux - 3.11.0-18-generic - x86_64
+The system is: Linux - 3.2.0-38-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/cc 
+Compiler: /usr/bin/gcc 
 Build flags: 
 Id flags: 
 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/2.8.11.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,99 +23,106 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/2.8.11.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3455573977/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3455573977.dir/build.make CMakeFiles/cmTryCompileExec3455573977.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3455573977.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3455573977.dir/testCCompiler.c.o   -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec3455573977
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3455573977.dir/link.txt --verbose=1
-/usr/bin/cc         CMakeFiles/cmTryCompileExec3455573977.dir/testCCompiler.c.o  -o cmTryCompileExec3455573977 -rdynamic 
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec2066887754/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2066887754.dir/build.make CMakeFiles/cmTryCompileExec2066887754.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2066887754.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2066887754.dir/testCCompiler.c.o   -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec2066887754
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2066887754.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec2066887754.dir/testCCompiler.c.o  -o cmTryCompileExec2066887754 -rdynamic 
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3883520432/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3883520432.dir/build.make CMakeFiles/cmTryCompileExec3883520432.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec3883520432
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3883520432.dir/link.txt --verbose=1
-/usr/bin/cc       -v CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3883520432 -rdynamic  
+Run Build Command:/usr/bin/make "cmTryCompileExec1899113829/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1899113829.dir/build.make CMakeFiles/cmTryCompileExec1899113829.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec1899113829
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1899113829.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1899113829 -rdynamic  
 Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.8.1-10ubuntu9' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.3-1ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3883520432' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3883520432 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1899113829' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec1899113829 /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3883520432/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3883520432.dir/build.make CMakeFiles/cmTryCompileExec3883520432.dir/build]
-  ignore line: [make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec3883520432]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3883520432.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc       -v CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3883520432 -rdynamic  ]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1899113829/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1899113829.dir/build.make CMakeFiles/cmTryCompileExec1899113829.dir/build]
+  ignore line: [make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec1899113829]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1899113829.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1899113829 -rdynamic  ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper]
   ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.8.1-10ubuntu9' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.3-1ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3883520432' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3883520432 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
+  ignore line: [gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1899113829' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.6/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec1899113829 /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
     arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
     arg [-export-dynamic] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec3883520432] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib]
+    arg [cmTryCompileExec1899113829] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib]
     arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec3883520432.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..]
+    arg [CMakeFiles/cmTryCompileExec1899113829.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -125,116 +132,128 @@ Parsed C implicit link information from above output:
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [--no-as-needed] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o] ==> ignore
   remove lib [gcc]
   remove lib [gcc_s]
   remove lib [gcc]
   remove lib [gcc_s]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.8]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.6]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..] ==> [/usr/lib]
   implicit libs: [c]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.8;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
-  implicit fwks: []
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.6;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib;/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21]
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1315345008/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1315345008.dir/build.make CMakeFiles/cmTryCompileExec1315345008.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1315345008.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1315345008.dir/testCXXCompiler.cxx.o -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec1315345008
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1315345008.dir/link.txt --verbose=1
-/usr/bin/c++          CMakeFiles/cmTryCompileExec1315345008.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1315345008 -rdynamic 
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1718356980/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1718356980.dir/build.make CMakeFiles/cmTryCompileExec1718356980.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1718356980.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1718356980.dir/testCXXCompiler.cxx.o -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec1718356980
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1718356980.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec1718356980.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1718356980 -rdynamic 
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3664675421/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3664675421.dir/build.make CMakeFiles/cmTryCompileExec3664675421.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec3664675421
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3664675421.dir/link.txt --verbose=1
-/usr/bin/c++        -v CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3664675421 -rdynamic  
+Run Build Command:/usr/bin/make "cmTryCompileExec2790924406/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2790924406.dir/build.make CMakeFiles/cmTryCompileExec2790924406.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2790924406
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2790924406.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2790924406 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.8.1-10ubuntu9' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.3-1ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3664675421' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3664675421 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2790924406' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2790924406 /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3664675421/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3664675421.dir/build.make CMakeFiles/cmTryCompileExec3664675421.dir/build]
-  ignore line: [make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec3664675421]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3664675421.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3664675421 -rdynamic  ]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2790924406/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2790924406.dir/build.make CMakeFiles/cmTryCompileExec2790924406.dir/build]
+  ignore line: [make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2790924406]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2790924406.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2790924406 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper]
   ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.8.1-10ubuntu9' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.3-1ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3664675421' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3664675421 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
+  ignore line: [gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64/:/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2790924406' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.6/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2790924406 /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
     arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
     arg [-export-dynamic] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec3664675421] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib]
+    arg [cmTryCompileExec2790924406] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib]
     arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec3664675421.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..]
+    arg [CMakeFiles/cmTryCompileExec2790924406.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -242,27 +261,32 @@ Parsed CXX implicit link information from above output:
     arg [-lc] ==> lib [c]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o] ==> ignore
   remove lib [gcc_s]
   remove lib [gcc]
   remove lib [gcc_s]
   remove lib [gcc]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.8]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.6]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..] ==> [/usr/lib]
   implicit libs: [stdc++;m;c]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.8;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
-  implicit fwks: []
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.6;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib;/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21]
 
 
 Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" succeeded.
-Compiler: /usr/bin/gfortran 
+Compiler: /opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort 
 Build flags: 
 Id flags: 
 
@@ -272,151 +296,153 @@ The output was:
 
 Compilation of the Fortran compiler identification source "CMakeFortranCompilerId.F" produced "a.out"
 
-The Fortran compiler identification is GNU, found in "/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/2.8.11.2/CompilerIdFortran/a.out"
+The Fortran compiler identification is Intel, found in "/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CompilerIdFortran/a.out"
 
 Determining if the Fortran compiler works passed with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3757859675/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3757859675.dir/build.make CMakeFiles/cmTryCompileExec3757859675.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building Fortran object CMakeFiles/cmTryCompileExec3757859675.dir/testFortranCompiler.f.o
-/usr/bin/gfortran    -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTryCompileExec3757859675.dir/testFortranCompiler.f.o
-Linking Fortran executable cmTryCompileExec3757859675
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3757859675.dir/link.txt --verbose=1
-/usr/bin/gfortran         CMakeFiles/cmTryCompileExec3757859675.dir/testFortranCompiler.f.o  -o cmTryCompileExec3757859675 -rdynamic 
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec488134174/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec488134174.dir/build.make CMakeFiles/cmTryCompileExec488134174.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building Fortran object CMakeFiles/cmTryCompileExec488134174.dir/testFortranCompiler.f.o
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort    -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTryCompileExec488134174.dir/testFortranCompiler.f.o
+Linking Fortran executable cmTryCompileExec488134174
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec488134174.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort         CMakeFiles/cmTryCompileExec488134174.dir/testFortranCompiler.f.o  -o cmTryCompileExec488134174 -i_dynamic 
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 
 Detecting Fortran compiler ABI info compiled with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec498307730/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec498307730.dir/build.make CMakeFiles/cmTryCompileExec498307730.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building Fortran object CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o
-/usr/bin/gfortran    -c /usr/share/cmake-2.8/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o
-Linking Fortran executable cmTryCompileExec498307730
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec498307730.dir/link.txt --verbose=1
-/usr/bin/gfortran   -v     CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o  -o cmTryCompileExec498307730 -rdynamic  
-Driving: /usr/bin/gfortran -v CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o -o cmTryCompileExec498307730 -rdynamic -l gfortran -l m -shared-libgcc
-Using built-in specs.
-COLLECT_GCC=/usr/bin/gfortran
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.8.1-10ubuntu9' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
-Thread model: posix
-gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) 
-Reading specs from /usr/lib/gcc/x86_64-linux-gnu/4.8/libgfortran.spec
-rename spec lib to liborig
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec498307730' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec498307730' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec498307730 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1063096676/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1063096676.dir/build.make CMakeFiles/cmTryCompileExec1063096676.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building Fortran object CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort    -c /usr/local/share/cmake-2.8/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o
+Linking Fortran executable cmTryCompileExec1063096676
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1063096676.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort   -v     CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o  -o cmTryCompileExec1063096676 -i_dynamic  
+ifort version 12.1.5
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/fortcom    -mP1OPT_version=12.1-intel64 -mGLOB_diag_file=CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.diag -mGLOB_source_language=GLOB_SOURCE_LANGUAGE_F90 -mGLOB_tune_for_fort -mGLOB_use_fort_dope_vector -mP2OPT_static_promotion -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=460 "-mGLOB_options_string=-v -o cmTryCompileExec1063096676 -i_dynamic" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_as_output_backup_file_name=/tmp/ifort5ghgHgas_.s -mIPOPT_activate -mGLOB_machine_model=GLOB_MACHINE_MODEL_EFI2 -mGLOB_product_id_code=0x22006d8c -mCG_bnl_movbe=T -mP3OPT_use_mspp_call_convention -mP2OPT_subs_out_of_bound=FALSE -mGLOB_ansi_alias -mPGOPTI_value_profile_use=T -mP2OPT_il0_array_sections=TRUE -mP2OPT_hlo -mP2OPT_hpo_rtt_control=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/libiml_attr.so -mIPOPT_link -mIPOPT_ipo_activate -mIPOPT_mo_activate -mIPOPT_source_files_list=/tmp/ifortcXeUQ4slis -mIPOPT_mo_global_data -mIPOPT_link_script_file=/tmp/ifortVk4c8Nscript -mIPOPT_link_version=2.22 "-mIPOPT_cmdline_link="/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o" "/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o" "/usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o" "--eh-frame-hdr" "--build-id" "-dynamic-linker" "/lib64/ld-linux-x86-64.so.2" "-o" "cmTryCompileExec1063096676" "/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/for_main.o" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib" "-L/lib/x86_64-linux-gnu" "-L/lib/../lib64" "-L/lib/../lib" "-L/usr/lib/x86_64-linux-gnu" "-L/usr/lib/../lib" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.." "-L/lib64" "-L/lib" "-L/usr/lib" "CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o" "-lifport" "-lifcore" "-limf" "-lsvml" "-lm" "-lipgo" "-lintlc" "-u" "__pthread_once" "-lpthread" "-lc" "-lgcc" "-lgcc_s" "-lirc_s" "-ldl" "-lc" "/usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o" "/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o"" -mIPOPT_il_in_obj -mIPOPT_ipo_activate_warn=FALSE -mIPOPT_obj_output_file_name=/tmp/ipo_ifortQ4dbbH.o -mGLOB_linker_version=2.22 -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ipo_ifortQ4dbbH.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_NONE -mP1OPT_source_file_name=ipo_out.f -mP2OPT_symtab_type_copy=true CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o -mIPOPT_object_files=/tmp/ifortKonssqolis -mIPOPT_assembly_files=/tmp/ifortOwMJJ9alis -mIPOPT_generated_tempfiles=/tmp/ifortHuu10Selis -mIPOPT_embedded_object_base_name=/tmp/ifortcQpjiCeobj -mIPOPT_cmdline_link_new_name=/tmp/ifortgpDBzlllis
+ld    /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1063096676 /opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/for_main.o -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. -L/lib64 -L/lib -L/usr/lib CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o -lifport -lifcore -limf -lsvml -lm -lipgo -lintlc -u __pthread_once -lpthread -lc -lgcc -lgcc_s -lirc_s -ldl -lc /usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 
 Parsed Fortran implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec498307730/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec498307730.dir/build.make CMakeFiles/cmTryCompileExec498307730.dir/build]
-  ignore line: [make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building Fortran object CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o]
-  ignore line: [/usr/bin/gfortran    -c /usr/share/cmake-2.8/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o]
-  ignore line: [Linking Fortran executable cmTryCompileExec498307730]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec498307730.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/gfortran   -v     CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o  -o cmTryCompileExec498307730 -rdynamic  ]
-  ignore line: [Driving: /usr/bin/gfortran -v CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o -o cmTryCompileExec498307730 -rdynamic -l gfortran -l m -shared-libgcc]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/gfortran]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.8.1-10ubuntu9' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
-  ignore line: [Thread model: posix]
-  ignore line: [gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) ]
-  ignore line: [Reading specs from /usr/lib/gcc/x86_64-linux-gnu/4.8/libgfortran.spec]
-  ignore line: [rename spec lib to liborig]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec498307730' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec498307730' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec498307730 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
-    arg [--sysroot=/] ==> ignore
-    arg [--build-id] ==> ignore
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1063096676/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1063096676.dir/build.make CMakeFiles/cmTryCompileExec1063096676.dir/build]
+  ignore line: [make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building Fortran object CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort    -c /usr/local/share/cmake-2.8/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [Linking Fortran executable cmTryCompileExec1063096676]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1063096676.dir/link.txt --verbose=1]
+  ignore line: [/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort   -v     CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o  -o cmTryCompileExec1063096676 -i_dynamic  ]
+  ignore line: [ifort version 12.1.5]
+  ignore line: [/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/fortcom    -mP1OPT_version=12.1-intel64 -mGLOB_diag_file=CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.diag -mGLOB_source_language=GLOB_SOURCE_LANGUAGE_F90 -mGLOB_tune_for_fort -mGLOB_use_fort_dope_vector -mP2OPT_static_promotion -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=460 "-mGLOB_options_string=-v -o cmTryCompileExec1063096676 -i_dynamic" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_as_output_backup_file_name=/tmp/ifort5ghgHgas_.s -mIPOPT_activate -mGLOB_machine_model=GLOB_MACHINE_MODEL_EFI2 -mGLOB_product_id_code=0x22006d8c -mCG_bnl_movbe=T -mP3OPT_use_mspp_call_convention -mP2OPT_subs_out_of_bound=FALSE -mGLOB_ansi_alias -mPGOPTI_value_profile_use=T -mP2OPT_il0_array_sections=TRUE -mP2OPT_hlo -mP2OPT_hpo_rtt_control=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/libiml_attr.so -mIPOPT_link -mIPOPT_ipo_activate -mIPOPT_mo_activate -mIPOPT_source_files_list=/tmp/ifortcXeUQ4slis -mIPOPT_mo_global_data -mIPOPT_link_script_file=/tmp/ifortVk4c8Nscript -mIPOPT_link_version=2.22 "-mIPOPT_cmdline_link="/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o" "/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o" "/usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o" "--eh-frame-hdr" "--build-id" "-dynamic-linker" "/lib64/ld-linux-x86-64.so.2" "-o" "cmTryCompileExec1063096676" "/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/for_main.o" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib" "-L/lib/x86_64-linux-gnu" "-L/lib/../lib64" "-L/lib/../lib" "-L/usr/lib/x86_64-linux-gnu" "-L/usr/lib/../lib" "-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64" "-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21" "-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.." "-L/lib64" "-L/lib" "-L/usr/lib" "CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o" "-lifport" "-lifcore" "-limf" "-lsvml" "-lm" "-lipgo" "-lintlc" "-u" "__pthread_once" "-lpthread" "-lc" "-lgcc" "-lgcc_s" "-lirc_s" "-ldl" "-lc" "/usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o" "/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o"" -mIPOPT_il_in_obj -mIPOPT_ipo_activate_warn=FALSE -mIPOPT_obj_output_file_name=/tmp/ipo_ifortQ4dbbH.o -mGLOB_linker_version=2.22 -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ipo_ifortQ4dbbH.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_NONE -mP1OPT_source_file_name=ipo_out.f -mP2OPT_symtab_type_copy=true CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o -mIPOPT_object_files=/tmp/ifortKonssqolis -mIPOPT_assembly_files=/tmp/ifortOwMJJ9alis -mIPOPT_generated_tempfiles=/tmp/ifortHuu10Selis -mIPOPT_embedded_object_base_name=/tmp/ifortcQpjiCeobj -mIPOPT_cmdline_link_new_name=/tmp/ifortgpDBzlllis]
+  link line: [ld    /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1063096676 /opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/for_main.o -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64 -L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. -L/lib64 -L/lib -L/usr/lib CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o -lifport -lifcore -limf -lsvml -lm -lipgo -lintlc -u __pthread_once -lpthread -lc -lgcc -lgcc_s -lirc_s -ldl -lc /usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o]
+    arg [ld] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/crtbegin.o] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-export-dynamic] ==> ignore
+    arg [--build-id] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec498307730] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib]
+    arg [cmTryCompileExec1063096676] ==> ignore
+    arg [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64/for_main.o] ==> ignore
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib]
     arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec498307730.dir/CMakeFortranCompilerABI.F.o] ==> ignore
-    arg [-lgfortran] ==> lib [gfortran]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..]
+    arg [-L/lib64] ==> dir [/lib64]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTryCompileExec1063096676.dir/CMakeFortranCompilerABI.F.o] ==> ignore
+    arg [-lifport] ==> lib [ifport]
+    arg [-lifcore] ==> lib [ifcore]
+    arg [-limf] ==> lib [imf]
+    arg [-lsvml] ==> lib [svml]
     arg [-lm] ==> lib [m]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [-lquadmath] ==> lib [quadmath]
-    arg [-lm] ==> lib [m]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
+    arg [-lipgo] ==> lib [ipgo]
+    arg [-lintlc] ==> lib [intlc]
+    arg [-u] ==> ignore
+    arg [__pthread_once] ==> ignore
+    arg [-lpthread] ==> lib [pthread]
     arg [-lc] ==> lib [c]
-    arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  remove lib [gcc_s]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lirc_s] ==> lib [irc_s]
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o] ==> ignore
   remove lib [gcc]
   remove lib [gcc_s]
-  remove lib [gcc]
-  remove lib [gcc_s]
-  remove lib [gcc]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.8]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> [/usr/lib]
-  implicit libs: [gfortran;m;quadmath;m;c]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.8;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
-  implicit fwks: []
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.6]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/../compiler/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64] ==> [/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64]
+  collapse dir [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21] ==> [/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.6/../../..] ==> [/usr/lib]
+  collapse dir [/lib64] ==> [/lib64]
+  collapse dir [/lib] ==> [/lib]
+  collapse dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [ifport;ifcore;imf;svml;m;ipgo;intlc;pthread;c;irc_s;dl;c]
+  implicit dirs: [/opt/intel/composer_xe_2011_sp1.11.339/compiler/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/ipp/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/mkl/lib/intel64;/opt/intel/composer_xe_2011_sp1.11.339/tbb/lib/intel64/cc4.1.0_libc2.4_kernel2.6.16.21;/usr/lib/gcc/x86_64-linux-gnu/4.6;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib64;/lib]
 
 
 Determining if the Fortran compiler supports Fortran 90 passed with the following output:
-Change Dir: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
+Change Dir: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3603491075/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3603491075.dir/build.make CMakeFiles/cmTryCompileExec3603491075.dir/build
-make[1]: Entering directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building Fortran object CMakeFiles/cmTryCompileExec3603491075.dir/testFortranCompilerF90.f90.o
-/usr/bin/gfortran    -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTryCompileExec3603491075.dir/testFortranCompilerF90.f90.o
-Linking Fortran executable cmTryCompileExec3603491075
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3603491075.dir/link.txt --verbose=1
-/usr/bin/gfortran         CMakeFiles/cmTryCompileExec3603491075.dir/testFortranCompilerF90.f90.o  -o cmTryCompileExec3603491075 -rdynamic 
-make[1]: Leaving directory `/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1076179269/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1076179269.dir/build.make CMakeFiles/cmTryCompileExec1076179269.dir/build
+make[1]: Entering directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building Fortran object CMakeFiles/cmTryCompileExec1076179269.dir/testFortranCompilerF90.f90.o
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort    -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTryCompileExec1076179269.dir/testFortranCompilerF90.f90.o
+Linking Fortran executable cmTryCompileExec1076179269
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1076179269.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort         CMakeFiles/cmTryCompileExec1076179269.dir/testFortranCompilerF90.f90.o  -o cmTryCompileExec1076179269 -i_dynamic 
+make[1]: Leaving directory `/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/CMakeTmp'
 
 

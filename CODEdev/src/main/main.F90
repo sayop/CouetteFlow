@@ -13,7 +13,9 @@ PROGRAM main
                                 CalRMSerrSteady
 
    IMPLICIT NONE
-   INTEGER :: iKill, nIter
+   INTEGER :: iKill, nIter, iCONVERGE
+   REAL(KIND=wp) :: MaxRMSerrUS
+   MaxRMSerrUS = 0.0_wp
 
    CALL ReadInput()
    CALL Initialize()
@@ -34,17 +36,22 @@ PROGRAM main
       CALL CalUnSteadyExactSol()
       CALL CalRMSerrUnsteady
       CALL CalRMSerrSteady
+      MaxRMSerrUS = MAX(MaxRMSerrUS,RMSerrUS)
       CALL WriteRMSlog(nIter)
       IF(MOD(nIter, nIterOut) .EQ. 0) THEN
          CALL WriteDataOut(nIter,t)
       ENDIF
       IF(RMSerrSS .LT. RMSlimit) THEN
+         iCONVERGE = 1
+         WRITE(*,'(A)') "### CONVERGENCE IS SUCCESSFULLY ACHIEVED!!!"
          CALL WriteDataOut(nIter,t)
          EXIT
       ENDIF
-      !write(*,*) nIter, t, RMSerrSS, RMSerrUS
-      !CALL UpdateDimVars()
    END DO TimeLoop
+   IF(iCONVERGE .NE. 1) THEN
+      WRITE(*,'(A,I6.6,A)') "### CONVERGENCE IS NOT ACHIEVED WITHIN ",iterMax," ITERATIONS!!!"
+   ENDIF
+   WRITE(*,'(A,g15.6)') "### Maximum RMS error based on Steady-State: ", MaxRMSerrUS
 
 END PROGRAM main
 
