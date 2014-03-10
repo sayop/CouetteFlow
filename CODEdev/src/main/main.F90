@@ -3,18 +3,20 @@
 
 PROGRAM main
    USE Parameters_m, ONLY: wp
-   USE io_m, ONLY: ReadInput
-   USE SimulationVars_m, ONLY: t, dt, iterMax
+   USE io_m, ONLY: ReadInput, WriteRMSlog, WriteDataOut, nIterOut
+   USE SimulationVars_m, ONLY: t, tp, dt, iterMax, RMSerrSS, RMSerrUS, &
+                               RMSlimit
    USE SimulationSetup_m, ONLY: Initialize, SetupBCIC, SetTimeStep, &
                                 UpdateNonDimVars, UpdateDimVars, &
                                 UpdateVelocity, CalSteadyExactSol, &
-                                CalUnSteadyExactSol
+                                CalUnSteadyExactSol, CalRMSerrUnsteady, &
+                                CalRMSerrSteady
 
    IMPLICIT NONE
    INTEGER :: iKill, nIter
 
-   CALL Initialize()
    CALL ReadInput()
+   CALL Initialize()
    CALL SetupBCIC()
    IF(dt .EQ. 0.0_wp) THEN
       iKill = 0
@@ -22,13 +24,26 @@ PROGRAM main
       IF(iKill .EQ. 1) STOP
    END IF
 
-   !CALL CalSteadyExactSol()
+   CALL CalSteadyExactSol()
+   CALL CalUnSteadyExactSol()
+   CALL WriteDataOut(0,t)
    TimeLoop: DO nIter = 1, iterMax
+      t = t + dt
       CALL UpdateNonDimVars()
       CALL UpdateVelocity()
-      !CALL CalUnSteadyExactSol()
-      CALL UpdateDimVars()
-      t = t + dt
+      CALL CalUnSteadyExactSol()
+      CALL CalRMSerrUnsteady
+      CALL CalRMSerrSteady
+      CALL WriteRMSlog(nIter)
+      IF(MOD(nIter, nIterOut) .EQ. 0) THEN
+         CALL WriteDataOut(nIter,t)
+      ENDIF
+      IF(RMSerrSS .LT. RMSlimit) THEN
+         CALL WriteDataOut(nIter,t)
+         EXIT
+      ENDIF
+      !write(*,*) nIter, t, RMSerrSS, RMSerrUS
+      !CALL UpdateDimVars()
    END DO TimeLoop
 
 END PROGRAM main

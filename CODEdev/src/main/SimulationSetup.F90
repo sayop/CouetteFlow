@@ -7,7 +7,7 @@ MODULE SimulationSetup_m
 
    PUBLIC :: Initialize, SetupBCIC, SetTimeStep, UpdateNonDimVars, &
              UpdateDimVars, UpdateVelocity, CalSteadyExactSol, &
-             CalUnSteadyExactSol
+             CalUnSteadyExactSol, CalRMSerrSteady, CalRMSerrUnsteady
 
 CONTAINS
 
@@ -15,7 +15,8 @@ CONTAINS
    SUBROUTINE Initialize()
 !-----------------------------------------------------------------------------!
       USE Parameters_m, ONLY: CODE_VER_STRING
-      USE SimulationVars_m, ONLY: tp, yp, up, y, u, uExac, uExacSS, jmax
+      USE SimulationVars_m, ONLY: t, tp, yp, up, y, u, jmax, uExac, uExacSS, &
+                                  upExac, upExacSS
       IMPLICIT NONE
 
       ALLOCATE(yp(jmax))
@@ -24,11 +25,20 @@ CONTAINS
       ALLOCATE(u(jmax))
       ALLOCATE(uExac(jmax))
       ALLOCATE(uExacSS(jmax))
+      ALLOCATE(upExac(jmax))
+      ALLOCATE(upExacSS(jmax))
 
       WRITE(*,'(a)') ""
-      WRITE(*,'(a)') "CFD code Version: ", CODE_VER_STRING
+      WRITE(*,'(3a)') "### CFD code Version: ", CODE_VER_STRING, "###"
 
+      t = 0.0_wp
       tp = 0.0_wp
+      y = 0.0_wp
+      yp = 0.0_wp
+      u = 0.0_wp
+      up = 0.0_wp
+      uExac = 0.0_wp
+      uExacSS = 0.0_wp
    END SUBROUTINE Initialize
 
 
@@ -45,20 +55,16 @@ CONTAINS
       INTEGER :: j
 
       WRITE(*,'(a)') ""
-      WRITE(*,'(a)') "Setup Initial Condition and Boundary Condition"
+      WRITE(*,'(a)') "### Setup Initial Condition and Boundary Condition"
 
-      ! Set y coordinate
+      ! Set y coordinate and initial condition
       dy = distL / (jmax - 1)    
       DO j = 1, jmax
-         y(j) = dy * real(j - 1)
-      END DO
-
-      ! Set initial condition:
-      !        
-      ! u(y) = u_top * ( y' + sin(pi x y') )
-      !       
-      DO j = 1, jmax
-         u(j) = uTop * ( y(j)/distL + sin(PI * yp(j)/distL) )
+         y(j) = dy * (j - 1)
+         !        
+         ! u(y) = u_top * ( y' + sin(pi x y') )
+         !
+         u(j) = uTop * ( y(j)/distL + sin(PI * y(j)/distL) )
       END DO
 
       CALL UpdateNonDimVars()   
@@ -70,25 +76,24 @@ CONTAINS
 !-----------------------------------------------------------------------------!
 !   Setup computational time step based on Von-Neumann stability analysis
 !-----------------------------------------------------------------------------!
-      USE SimulationVars_m, ONLY: dt, dtp, distL, dyp, theta, nu
+      USE SimulationVars_m, ONLY: dt, dtp, dyp, theta
 
       IMPLICIT NONE
       INTEGER :: iKill
-      REAL(KIND=wp) :: tau
 
       IF(theta .GE. 0.5_wp) THEN
          WRITE(*,'(a)') ""
-         WRITE(*,'(a)') "Unconditionally stable!!"
-         WRITE(*,'(a)') "Input any value of 'dt' in input.dat and rerun!!"
+         WRITE(*,'(a)') "### Unconditionally stable!!"
+         WRITE(*,'(a)') "### Input any value of 'dt' in input.dat and rerun!!"
          iKill = 1
       ELSE
-         CALL UpdateNonDimVars()
          dtp = dyp**2 / 4.0_wp / (0.5_wp - theta)  ! Non-Dimensionalized form
          CALL UpdateDimVars()
          WRITE(*,'(a)') ""
-         WRITE(*,'(a)') "Setup Time Step for stable running"
-         WRITE(*,'(a,g15.6)') "This scheme is stable if dt is equal to or less than", dt
-         WRITE(*,'(a,g15.6)') 'dt is selected as ', dt
+         WRITE(*,'(a)') "### Setup Time Step for stable running"
+         WRITE(*,'(a,g15.6)') "### This scheme is stable if dt is equal to or less than", dt
+         WRITE(*,'(a,g15.6)') "### dt is selected as ", dt
+         WRITE(*,'(a,g15.6)') "### Non-Dimensionalized time step 'dtp' is selected as ", dtp
          iKill = 0
       END IF
    END SUBROUTINE SetTimeStep
@@ -99,7 +104,8 @@ CONTAINS
 !  Update Non-dimensionalized variables from dimensional variables
 !-----------------------------------------------------------------------------!
       USE SimulationVars_m, ONLY: t, dt, y, u, dy, &
-                                  tp, dtp, yp, up, dyp, nu, distL, uTop
+                                  tp, dtp, yp, up, dyp, nu, distL, uTop, &
+                                  upExac, upExacSS, uExac, uExacSS
 
       IMPLICIT NONE
       REAL(KIND=wp) :: tau
@@ -111,6 +117,8 @@ CONTAINS
       up = u / uTop
       dtp = dt / tau
       dyp = dy / distL
+      upExac = uExac / uTop
+      upExacSS = uExacSS / uTop
 
    END SUBROUTINE UpdateNonDimVars
 
@@ -120,7 +128,8 @@ CONTAINS
 !  Update dimensionalized variables from Non-dimensional variables
 !-----------------------------------------------------------------------------!
       USE SimulationVars_m, ONLY: t, dt, y, u, dy, &
-                                  tp, dtp, yp, up, dyp, nu, distL, uTop
+                                  tp, dtp, yp, up, dyp, nu, distL, uTop, &
+                                  upExac, upExacSS, uExac, uExacSS
 
       IMPLICIT NONE
       REAL(KIND=wp) :: tau
@@ -132,6 +141,8 @@ CONTAINS
       u = up * uTop
       dt = dtp * tau
       dy = dyp * distL
+      uExac = upExac * uTop
+      uExacSS = upExacSS * uTop
 
    END SUBROUTINE UpdateDimVars
 
@@ -203,23 +214,63 @@ CONTAINS
 !  Calculate Steady State Solution: used at one time
 !  USE Non-Dimensionalized variables only!
 !-----------------------------------------------------------------------------!
-      USE SimulationVars_m, ONLY: uExacSS, yp, jmax
+      USE SimulationVars_m, ONLY: upExacSS, yp, jmax
+
+      IMPLICIT NONE
+
+      upExacSS = yp
+      CALL UpdateDimVars
+   END SUBROUTINE CalSteadyExactSol
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalRMSerrSteady()
+!-----------------------------------------------------------------------------!
+!  Calculate RMS error relative to the Steady-State exact solution
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: up, upExacSS, RMSerrSS, jmax
 
       IMPLICIT NONE
       INTEGER :: j
-
-      DO j = 1, jmax
-         !uExacSS(j) = yp(j)
+      REAL(KIND=wp) :: rr
+     
+      rr = 0.0_wp
+      DO j = 2, jmax - 1
+         rr = rr + (upExacSS(j) - up(j))**2
       END DO
-   END SUBROUTINE CalSteadyExactSol
+      RMSerrSS = (rr / (jmax-2)) ** 0.5_wp
+      
+   END SUBROUTINE CalRMSerrSteady
 
 !-----------------------------------------------------------------------------!
    SUBROUTINE CalUnSteadyExactSol()
 !-----------------------------------------------------------------------------!
 !  Calculate Steady State Solution: updated every time step
 !-----------------------------------------------------------------------------!
+      USE Parameters_m, ONLY: PI
+      USE SimulationVars_m, ONLY: up, upExac, tp, yp, jmax
 
+      IMPLICIT NONE
 
+      upExac = yp + sin(PI * yp) * exp(-PI**2 * tp)
+      CALL UpdateDimVars
    END SUBROUTINE CalUnSteadyExactSol
 
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalRMSerrUnSteady()
+!-----------------------------------------------------------------------------!
+!  Calculate RMS error relative to the Steady-State exact solution
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: up, upExac, RMSerrUS, jmax
+
+      IMPLICIT NONE
+      INTEGER :: j
+      REAL(KIND=wp) :: rr
+
+      rr = 0.0_wp
+      DO j = 2, jmax - 1
+         rr = rr + (upExac(j) - up(j))**2
+      END DO
+      RMSerrUS = (rr / (jmax-2)) ** 0.5_wp
+
+   END SUBROUTINE CalRMSerrUnSteady
 END MODULE SimulationSetup_m
