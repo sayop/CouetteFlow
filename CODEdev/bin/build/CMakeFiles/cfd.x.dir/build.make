@@ -26,22 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src
+CMAKE_SOURCE_DIR = /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build
+CMAKE_BINARY_DIR = /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cfd.x.dir/depend.make
@@ -53,10 +50,10 @@ include CMakeFiles/cfd.x.dir/progress.make
 include CMakeFiles/cfd.x.dir/flags.make
 
 CMakeFiles/cfd.x.dir/main/main.F90.o: CMakeFiles/cfd.x.dir/flags.make
-CMakeFiles/cfd.x.dir/main/main.F90.o: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/main.F90
-	$(CMAKE_COMMAND) -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/cfd.x.dir/main/main.F90.o: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/main.F90
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/cfd.x.dir/main/main.F90.o"
-	/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/main.F90 -o CMakeFiles/cfd.x.dir/main/main.F90.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/main.F90 -o CMakeFiles/cfd.x.dir/main/main.F90.o
 
 CMakeFiles/cfd.x.dir/main/main.F90.o.requires:
 .PHONY : CMakeFiles/cfd.x.dir/main/main.F90.o.requires
@@ -68,10 +65,10 @@ CMakeFiles/cfd.x.dir/main/main.F90.o.provides: CMakeFiles/cfd.x.dir/main/main.F9
 CMakeFiles/cfd.x.dir/main/main.F90.o.provides.build: CMakeFiles/cfd.x.dir/main/main.F90.o
 
 CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o: CMakeFiles/cfd.x.dir/flags.make
-CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/SimulationSetup.F90
-	$(CMAKE_COMMAND) -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_2)
+CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/SimulationSetup.F90
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o"
-	/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/SimulationSetup.F90 -o CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/SimulationSetup.F90 -o CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o
 
 CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.requires:
 .PHONY : CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.requires
@@ -83,10 +80,10 @@ CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.provides: CMakeFiles/cfd.x.dir/m
 CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.provides.build: CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o
 
 CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o: CMakeFiles/cfd.x.dir/flags.make
-CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/SimulationVars.F90
-	$(CMAKE_COMMAND) -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_3)
+CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/SimulationVars.F90
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o"
-	/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/SimulationVars.F90 -o CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/SimulationVars.F90 -o CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o
 
 CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.requires:
 .PHONY : CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.requires
@@ -98,10 +95,10 @@ CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.provides: CMakeFiles/cfd.x.dir/ma
 CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.provides.build: CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o
 
 CMakeFiles/cfd.x.dir/main/Parameters.F90.o: CMakeFiles/cfd.x.dir/flags.make
-CMakeFiles/cfd.x.dir/main/Parameters.F90.o: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/Parameters.F90
-	$(CMAKE_COMMAND) -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_4)
+CMakeFiles/cfd.x.dir/main/Parameters.F90.o: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/Parameters.F90
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/cfd.x.dir/main/Parameters.F90.o"
-	/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main/Parameters.F90 -o CMakeFiles/cfd.x.dir/main/Parameters.F90.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main/Parameters.F90 -o CMakeFiles/cfd.x.dir/main/Parameters.F90.o
 
 CMakeFiles/cfd.x.dir/main/Parameters.F90.o.requires:
 .PHONY : CMakeFiles/cfd.x.dir/main/Parameters.F90.o.requires
@@ -113,10 +110,10 @@ CMakeFiles/cfd.x.dir/main/Parameters.F90.o.provides: CMakeFiles/cfd.x.dir/main/P
 CMakeFiles/cfd.x.dir/main/Parameters.F90.o.provides.build: CMakeFiles/cfd.x.dir/main/Parameters.F90.o
 
 CMakeFiles/cfd.x.dir/io/io.F90.o: CMakeFiles/cfd.x.dir/flags.make
-CMakeFiles/cfd.x.dir/io/io.F90.o: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/io/io.F90
-	$(CMAKE_COMMAND) -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_5)
+CMakeFiles/cfd.x.dir/io/io.F90.o: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/io/io.F90
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/cfd.x.dir/io/io.F90.o"
-	/opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/io/io.F90 -o CMakeFiles/cfd.x.dir/io/io.F90.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/io/io.F90 -o CMakeFiles/cfd.x.dir/io/io.F90.o
 
 CMakeFiles/cfd.x.dir/io/io.F90.o.requires:
 .PHONY : CMakeFiles/cfd.x.dir/io/io.F90.o.requires
@@ -164,6 +161,6 @@ CMakeFiles/cfd.x.dir/clean:
 .PHONY : CMakeFiles/cfd.x.dir/clean
 
 CMakeFiles/cfd.x.dir/depend:
-	cd /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles/cfd.x.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles/cfd.x.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cfd.x.dir/depend
 

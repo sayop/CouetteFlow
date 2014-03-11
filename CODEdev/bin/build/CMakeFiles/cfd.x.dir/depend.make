@@ -8,13 +8,13 @@ CMakeFiles/cfd.x.dir/io/io.F90.o.requires: CMakeFiles/cfd.x.dir/simulationvars_m
 CMakeFiles/cfd.x.dir/io/io.F90.o: CMakeFiles/cfd.x.dir/simulationvars_m.mod.stamp
 CMakeFiles/cfd.x.dir/io_m.mod.proxy: CMakeFiles/cfd.x.dir/io/io.F90.o.provides
 CMakeFiles/cfd.x.dir/io/io.F90.o.provides.build:
-	$(CMAKE_COMMAND) -E cmake_copy_f90_mod io_m CMakeFiles/cfd.x.dir/io_m.mod.stamp Intel
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod io_m CMakeFiles/cfd.x.dir/io_m.mod.stamp GNU
 	$(CMAKE_COMMAND) -E touch CMakeFiles/cfd.x.dir/io/io.F90.o.provides.build
 CMakeFiles/cfd.x.dir/build: CMakeFiles/cfd.x.dir/io/io.F90.o.provides.build
 
 CMakeFiles/cfd.x.dir/parameters_m.mod.proxy: CMakeFiles/cfd.x.dir/main/Parameters.F90.o.provides
 CMakeFiles/cfd.x.dir/main/Parameters.F90.o.provides.build:
-	$(CMAKE_COMMAND) -E cmake_copy_f90_mod parameters_m CMakeFiles/cfd.x.dir/parameters_m.mod.stamp Intel
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod parameters_m CMakeFiles/cfd.x.dir/parameters_m.mod.stamp GNU
 	$(CMAKE_COMMAND) -E touch CMakeFiles/cfd.x.dir/main/Parameters.F90.o.provides.build
 CMakeFiles/cfd.x.dir/build: CMakeFiles/cfd.x.dir/main/Parameters.F90.o.provides.build
 
@@ -24,7 +24,7 @@ CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.requires: CMakeFiles/cfd.x.dir/s
 CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o: CMakeFiles/cfd.x.dir/simulationvars_m.mod.stamp
 CMakeFiles/cfd.x.dir/simulationsetup_m.mod.proxy: CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.provides
 CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.provides.build:
-	$(CMAKE_COMMAND) -E cmake_copy_f90_mod simulationsetup_m CMakeFiles/cfd.x.dir/simulationsetup_m.mod.stamp Intel
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod simulationsetup_m CMakeFiles/cfd.x.dir/simulationsetup_m.mod.stamp GNU
 	$(CMAKE_COMMAND) -E touch CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.provides.build
 CMakeFiles/cfd.x.dir/build: CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o.provides.build
 
@@ -32,7 +32,7 @@ CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.requires: CMakeFiles/cfd.x.dir/pa
 CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o: CMakeFiles/cfd.x.dir/parameters_m.mod.stamp
 CMakeFiles/cfd.x.dir/simulationvars_m.mod.proxy: CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.provides
 CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.provides.build:
-	$(CMAKE_COMMAND) -E cmake_copy_f90_mod simulationvars_m CMakeFiles/cfd.x.dir/simulationvars_m.mod.stamp Intel
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod simulationvars_m CMakeFiles/cfd.x.dir/simulationvars_m.mod.stamp GNU
 	$(CMAKE_COMMAND) -E touch CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.provides.build
 CMakeFiles/cfd.x.dir/build: CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o.provides.build
 
