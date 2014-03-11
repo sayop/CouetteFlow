@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to run the code &mdash; CouetteFlow 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="CouetteFlow 0.0.1 documentation" href="../index.html" />
+    <link rel="next" title="Results summary" href="../Results/contents.html" />
+    <link rel="prev" title="Code development" href="../CodeDevel/contents.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../Results/contents.html" title="Results summary"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../CodeDevel/contents.html" title="Code development"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="how-to-run-the-code">
+<h1>How to run the code<a class="headerlink" href="#how-to-run-the-code" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="machine-platform-for-development">
+<h2>Machine platform for development<a class="headerlink" href="#machine-platform-for-development" title="Permalink to this headline">¶</a></h2>
+<p>This CouetteFlow code has been developed on personal computer operating on linux system (Ubuntu Linux 3.2.0-38-generic x86_64). Machine specification is summarized as shown below:</p>
+<p>vendor_id       : GenuineIntel</p>
+<p>cpu family      : 6</p>
+<p>model name      : Intel(R) Core(TM) i7-2600 CPU &#64; 3.40GHz</p>
+<p>cpu cores       : 4</p>
+<p>Memory          : 16418112 kB</p>
+</div>
+<div class="section" id="code-setup">
+<h2>Code setup<a class="headerlink" href="#code-setup" title="Permalink to this headline">¶</a></h2>
+<p>The CouetteFlow source code has been developed with version management tool, GIT. The git repository was built on &#8216;github.com&#8217;. Thus, the source code as well as related document files can be cloned into user&#8217;s local machine by following command:</p>
+<div class="highlight-python"><pre>$ git clone http://github.com/sayop/CouetteFlow.git</pre>
+</div>
+<p>If you open the git-cloned folder <strong>CouetteFlow</strong>, you will see two different folders and README file. The <strong>CODEdev</strong> folder contains again <strong>bin</strong> folder, <strong>Python</strong> folder, and <strong>src</strong> folder. In order to run the code, use should run <strong>setup.sh</strong> script in the <strong>bin</strong> folder. <strong>Python</strong> folder contains python scripts that are used to postprocess data. It may contain <strong>build</strong> folder, which might have been created in the different platform. Thus it is recommended that user should remove <strong>build</strong> folder before setting up the code. Note that the <strong>setup.sh</strong> script will run <strong>cmake</strong> command. Thus, make sure to have cmake installed on your system:</p>
+<div class="highlight-python"><pre>$ rm -rf build
+$ ./setup.sh
+-- The C compiler identification is GNU 4.6.3
+-- The CXX compiler identification is GNU 4.6.3
+-- Check for working C compiler: /usr/bin/gcc
+-- Check for working C compiler: /usr/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- The Fortran compiler identification is Intel
+-- Check for working Fortran compiler: /opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort
+-- Check for working Fortran compiler: /opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort  -- works
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Checking whether /opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort supports Fortran 90
+-- Checking whether /opt/intel/composer_xe_2011_sp1.11.339/bin/intel64/ifort supports Fortran 90 -- yes
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build
+Scanning dependencies of target cfd.x
+[ 20%] Building Fortran object CMakeFiles/cfd.x.dir/main/Parameters.F90.o
+[ 40%] Building Fortran object CMakeFiles/cfd.x.dir/main/SimulationVars.F90.o
+[ 60%] Building Fortran object CMakeFiles/cfd.x.dir/io/io.F90.o
+[ 80%] Building Fortran object CMakeFiles/cfd.x.dir/main/SimulationSetup.F90.o
+[100%] Building Fortran object CMakeFiles/cfd.x.dir/main/main.F90.o
+Linking Fortran executable cfd.x
+[100%] Built target cfd.x</pre>
+</div>
+<p>If you run this, you will get executable named <strong>cfd.x</strong> and <strong>input.dat</strong> files. The input file is made by default. You can quickly change the required input options.</p>
+</div>
+<div class="section" id="input-file-setup">
+<h2>Input file setup<a class="headerlink" href="#input-file-setup" title="Permalink to this headline">¶</a></h2>
+<p>The CouetteFlow code allows user to set multiple options to solve the unsteady Couette flow problem by reading <strong>input.dat</strong> file at the beginning of the computation. Followings are default setup values you can find in the input file when you run <strong>setup.sh</strong> script:</p>
+<div class="highlight-python"><pre># Input file for tecplot print
+Couette Flow
+uTop            1.0
+distL           1.0
+nu              1.0
+jmax            51
+theta           0.0
+dt              0.0
+iterMax         999999
+nIterOut        500
+RMSlimit        1.0e-7</pre>
+</div>
+<ul class="simple">
+<li><strong>First line</strong> (&#8216;Couette Flow&#8217; by default): Project Name</li>
+<li><strong>uTop</strong>: velocity at which top plate is moving</li>
+<li><strong>distL</strong>: distance between top plate and bottom plate</li>
+<li><strong>nu</strong>: viscosity coefficient</li>
+<li><strong>jmax</strong>: spatial resolution in height (y-direction)</li>
+<li><strong>theta</strong>: <span class="math">\(\Theta\)</span>, a weighting parameter for implicit scheme running</li>
+<li><strong>dt</strong>: temporal step size</li>
+<li><strong>iterMax</strong>: Maximum number of iteration to be converged. If the code run beyond this number, it will be forced to be terminated.</li>
+<li><strong>nIterOut</strong>: Interval of time step between writing out the data files.</li>
+<li><strong>RMSlimit</strong>: RMS error limit to determine convergence</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to run the code</a><ul>
+<li><a class="reference internal" href="#machine-platform-for-development">Machine platform for development</a></li>
+<li><a class="reference internal" href="#code-setup">Code setup</a></li>
+<li><a class="reference internal" href="#input-file-setup">Input file setup</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../CodeDevel/contents.html"
+                        title="previous chapter">Code development</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../Results/contents.html"
+                        title="next chapter">Results summary</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/HowToRun/contents.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../Results/contents.html" title="Results summary"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../CodeDevel/contents.html" title="Code development"
+             >previous</a> |</li>
+        <li><a href="../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Sayop Kim.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>
