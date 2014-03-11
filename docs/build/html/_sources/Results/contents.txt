@@ -39,7 +39,7 @@ E) Result #5
 Thus, the maximum time step to stabilize the scheme is determined as :math:`\Delta t' = 0.0002`.
 
 .. image:: ./images/RMSlog_5.png
-   :width: 50%  
+   :width: 80%  
 
 
 F) Result #6
@@ -48,13 +48,13 @@ F) Result #6
 **Q.** For :math:`\theta = 0`, present a graph which clearly shows the progression of velocity profiles during the flow development when :math:`\text{jmax} = 51`. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for :math:`\theta = 1/2` and :math:`\theta = 1`.
 
 .. image:: ./images/Vel_6_theta0.png
-   :width: 50%
+   :width: 80%
 
 .. image:: ./images/Vel_6_theta0.5.png
-   :width: 50% 
+   :width: 80% 
 
 .. image:: ./images/Vel_6_theta1.png
-   :width: 50%
+   :width: 888888880%
 
 G) Result #7
 ------------
@@ -81,27 +81,27 @@ Thus, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the
 - :math:`dt' = 0.0001`
 
 .. image:: ./images/RMSlog_7_0.0001.png
-   :width: 50%
+   :width: 80%
 
 
 - :math:`dt' = 0.0002`
 
 .. image:: ./images/RMSlog_7_0.0002.png
-   :width: 50%
+   :width: 80%
 
 
 .. image:: ./images/Vel_7_theta0_0.0002.gif
-   :width: 50%
+   :width: 80%
 
 
 - :math:`dt' = 0.000201`
 
 .. image:: ./images/RMSlog_7_0.000201.png
-   :width: 50%
+   :width: 80%
 
 
 .. image:: ./images/Vel_7_theta0_0.000201.gif
-   :width: 50%
+   :width: 80%
 
 
 
@@ -142,12 +142,12 @@ The stability check can be done by looking at the movies as a function of differ
 - :math:`dt' = 0.0001`
 
 .. image:: ./images/Vel_7_theta0.5_0.0001.gif
-   :width: 50%
+   :width: 80%
 
 - :math:`dt' = 1000`
 
 .. image:: ./images/Vel_7_theta0.5_1000.gif
-   :width: 50%
+   :width: 80%
 
 3) :math:`\theta` = 1 (Fully implicit)
 ++++++++++++++++++++++++++++++++++++++
@@ -216,7 +216,7 @@ Investigate the spatial order of accuracy of the code for :math:`\theta` = 1. Do
 +------------+--------+----------------------------------------------+----------------------------------------------+
 
 .. image:: ./images/peakRMS_9.png
-   :width: 50%
+   :width: 80%
 
 
 J) Result #10
@@ -256,4 +256,4 @@ Investigate the temporal order of accuracy of the code for :math:`\theta` = 1 an
 +-----------+-------------------------------------+---------------------------------------+
 
 .. image:: ./images/peakRMS_10.png
-   :width: 50%
+   :width: 80%
