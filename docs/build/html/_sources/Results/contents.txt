@@ -4,48 +4,48 @@ Results summary
 A) Result #1
 ------------
 
-Show the expression for :math:`\tau` that non-dimensionalizes the governing PDE. Show the non-dimensionalized form of the governing PDE.
+**Q.** Show the expression for :math:`\tau` that non-dimensionalizes the governing PDE. Show the non-dimensionalized form of the governing PDE.
 
 
 B) Result #2
 ------------
 
-Show the non-dimensionalized form of the time-dependent exact solution expression for the specified boundary and initial conditions given in this problem.
+**Q.** Show the non-dimensionalized form of the time-dependent exact solution expression for the specified boundary and initial conditions given in this problem.
 
 
 C) Result #3
 ------------
 
-Provide a brief description of the finite difference scheme scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.
+**Q.** Provide a brief description of the finite difference scheme scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.
 
 
 D) Result #4
 ------------
 
-Show the expression used for calculating the RMS Error relative to the time-dependent exact solution. Also show the expression used for calculating the RMS Error relative to the steady-state exact solution. Also, give a statement of the criteria used to end the calculations.
+**Q.** Show the expression used for calculating the RMS Error relative to the time-dependent exact solution. Also show the expression used for calculating the RMS Error relative to the steady-state exact solution. Also, give a statement of the criteria used to end the calculations.
 
 
 E) Result #5
 ------------
 
-For :math:`\theta = 0` and :math:`\text{jmax} = 51`, state the maximum value of :math:`\Delta t` for which a stable solution is obtained. Provide a semi-log plot of the RMS error (relative to the time-dependent exact solution) vs iteration number (using a :math:`\Delta t` for which the code is stable). Create a similar plot of the RMS error (relative to the steady-state exact solution) vs. iteration number.
+**Q.** For :math:`\theta = 0` and :math:`\text{jmax} = 51`, state the maximum value of :math:`\Delta t` for which a stable solution is obtained. Provide a semi-log plot of the RMS error (relative to the time-dependent exact solution) vs iteration number (using a :math:`\Delta t` for which the code is stable). Create a similar plot of the RMS error (relative to the steady-state exact solution) vs. iteration number.
 
-  Given conditions, the non-dimensional spatial step size results in :math:`\Delta y' = 0.0002`. Performing Von Neumann stability analysis on the given conditions give rise to the below time step criterion:
+**A.** Given conditions, the non-dimensional spatial step size results in :math:`\Delta y' = 0.0002`. Performing Von Neumann stability analysis on the given conditions give rise to the below time step criterion:
 
-  .. math::
-     \Delta t' \leqslant \frac{\Delta y'^{2}}{4\left ( \frac{1}{2} - \theta \right )}
+.. math::
+   \Delta t' \leqslant \frac{\Delta y'^{2}}{4\left ( \frac{1}{2} - \theta \right )}
 
 
-  Thus, the maximum time step to stabilize the scheme is determined as :math:`\Delta t' = 0.0002`.
+Thus, the maximum time step to stabilize the scheme is determined as :math:`\Delta t' = 0.0002`.
 
-  .. image:: ./images/RMSlog_5.png
-     :width: 50%  
+.. image:: ./images/RMSlog_5.png
+   :width: 50%  
 
 
 F) Result #6
 ------------
 
-For :math:`\theta = 0`, present a graph which clearly shows the progression of velocity profiles during the flow development when :math:`\text{jmax} = 51`. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for :math:`\theta = 1/2` and :math:`\theta = 1`.
+**Q.** For :math:`\theta = 0`, present a graph which clearly shows the progression of velocity profiles during the flow development when :math:`\text{jmax} = 51`. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for :math:`\theta = 1/2` and :math:`\theta = 1`.
 
 .. image:: ./images/Vel_6_theta0.png
    :width: 50%
@@ -59,31 +59,201 @@ For :math:`\theta = 0`, present a graph which clearly shows the progression of v
 G) Result #7
 ------------
 
-Provides a comparison of the stability behavior of your solver to the stability analysis performed in Homework Assignment #3. Compute :math:`\text{jmax} = 51` cases with :math:`\theta = 0`, :math:`1/2`, and :math:`1` using various values of :math:`\Delta t` to explore the stability boundaries of your solver. Show and discuss whether or not your solver follows the theoretical stability behavior of these three numerical schemes.
+**Q.** Provides a comparison of the stability behavior of your solver to the stability analysis performed in Homework Assignment #3. Compute :math:`\text{jmax} = 51` cases with :math:`\theta = 0`, :math:`1/2`, and :math:`1` using various values of :math:`\Delta t` to explore the stability boundaries of your solver. Show and discuss whether or not your solver follows the theoretical stability behavior of these three numerical schemes.
 
-  From the HW#3's solution, the stability analysis can be summarized by:
+**A.** From the HW#3's solution, the stability analysis can be summarized by:
 
-  - Unconditionally stable if :math:`\theta \geqslant \frac{1}{2}`
+- Unconditionally stable if :math:`\theta \geqslant \frac{1}{2}`
 
-  - Conditionally stable if :math:`0 \leqslant \theta < \frac{1}{2}`
+- Conditionally stable if :math:`0 \leqslant \theta < \frac{1}{2}`
 
-  In the case of conditionally stable scheme, the maximum time step can be determined by using below relation so that the scheme is stable with given :math:`\theta`.
+In the case of conditionally stable scheme, the maximum time step can be determined by using below relation so that the scheme is stable with given :math:`\theta`.
 
-  .. math:: 
-     \Delta t \leqslant \frac{\Delta y^{2}}{4\left ( \frac{1}{2}-\theta \right )}
+.. math:: 
+   \Delta t \leqslant \frac{\Delta y^{2}}{4\left ( \frac{1}{2}-\theta \right )}
 
-  Thus, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value.
-
-  (1) :math:`dt' = 0.0002`
-
-  .. image:: ./images/RMSlog_7_0.0002.png
-     :width: 50%
-
-  (2) :math:`dt' = 0.000201`
-
-  .. image:: ./images/RMSlog_7_0.000201.png
-     :width: 50%
+Thus, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value. If you can't see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7
 
 
-  .. image:: ./movies/Velocity.gif
-     :width: 50%
+1) :math:`\theta` = 0 (Fully explicit)
+++++++++++++++++++++++++++++++++++++++
+
+- :math:`dt' = 0.0001`
+
+.. image:: ./images/RMSlog_7_0.0001.png
+   :width: 50%
+
+
+- :math:`dt' = 0.0002`
+
+.. image:: ./images/RMSlog_7_0.0002.png
+   :width: 50%
+
+
+.. image:: ./images/Vel_7_theta0_0.0002.gif
+   :width: 50%
+
+
+- :math:`dt' = 0.000201`
+
+.. image:: ./images/RMSlog_7_0.000201.png
+   :width: 50%
+
+
+.. image:: ./images/Vel_7_theta0_0.000201.gif
+   :width: 50%
+
+
+
+
+2) :math:`\theta` = 1/2 (Crank-Nicolson scheme)
++++++++++++++++++++++++++++++++++++++++++++++++
+
+- **Convergence check with the various time step:**
+
++----------------------------------------------+------------------------------------------+
+| Non-dimensional time step :math:`\Delta t'`  | Maximum iteration for convergence        |
++----------------------------------------------+------------------------------------------+
+| 0.0001                                       | 15996                                    |
++----------------------------------------------+------------------------------------------+
+| 0.001                                        | 1600                                     |
++----------------------------------------------+------------------------------------------+
+| 0.01                                         | 160                                      |
++----------------------------------------------+------------------------------------------+
+| 0.1                                          | 15                                       |
++----------------------------------------------+------------------------------------------+
+| 1.0                                          | 39                                       |
++----------------------------------------------+------------------------------------------+
+| 10.0                                         | 390                                      |
++----------------------------------------------+------------------------------------------+
+| 100.0                                        | 3893                                     |
++----------------------------------------------+------------------------------------------+
+| 1000.0                                       | 38927                                    |
++----------------------------------------------+------------------------------------------+
+| 10000.0                                      | 389268                                   |
++----------------------------------------------+------------------------------------------+
+| 100000.0                                     | Not converged within 999999 iterations   |
++----------------------------------------------+------------------------------------------+
+
+All the cases above seem to be stable but the convergence is strongly sensitive to how big or small time step is. The interesting pattern to be observed here is that the maximum iteration number for convergence shows quadratic behavior. That is, quite small and quite big time step require long iterations. In particular, big time steps, 1000, 10000, and 100000 for examples, take long period to make the scheme converged into the specified RMS residual. This is somewhat unphysical. If 10,000 sec is taken as a time step, it will take about 123 years for the flow to be settled down to the steady-state.
+
+The stability check can be done by looking at the movies as a function of different time-step. If you can't see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7
+
+- :math:`dt' = 0.0001`
+
+.. image:: ./images/Vel_7_theta0.5_0.0001.gif
+   :width: 50%
+
+- :math:`dt' = 1000`
+
+.. image:: ./images/Vel_7_theta0.5_1000.gif
+   :width: 50%
+
+3) :math:`\theta` = 1 (Fully implicit)
+++++++++++++++++++++++++++++++++++++++
+
+- **Convergence check with the various time step:**
+
++----------------------------------------------+------------------------------------------+
+| Non-dimensional time step :math:`\Delta t'`  | Maximum iteration for convergence        |
++----------------------------------------------+------------------------------------------+
+| 0.0001                                       | 16004                                    |
++----------------------------------------------+------------------------------------------+
+| 0.001                                        | 1608                                     |
++----------------------------------------------+------------------------------------------+
+| 0.01                                         | 168                                      |
++----------------------------------------------+------------------------------------------+
+| 0.1                                          | 23                                       |
++----------------------------------------------+------------------------------------------+
+| 1.0                                          | 7                                        |
++----------------------------------------------+------------------------------------------+
+| 10.0                                         | 4                                        |
++----------------------------------------------+------------------------------------------+
+| 100.0                                        | 3                                        |
++----------------------------------------------+------------------------------------------+
+| 1000.0                                       | 2                                        |
++----------------------------------------------+------------------------------------------+
+| 10000.0                                      | 2                                        |
++----------------------------------------------+------------------------------------------+
+| 100000.0                                     | 2                                        |
++----------------------------------------------+------------------------------------------+
+
+All the tested cases above are stable and the convergence performance is enhanced as the time step increases.
+
+H) Result #8
+------------
+
+Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of :math:`\theta`. Note: You are not required to derive the TE expression.
+
+
+
+I) Result #9
+------------
+
+Investigate the spatial order of accuracy of the code for :math:`\theta` = 1. Do this by using a small value of :math:`\Delta t'` = 0.000625 and running multiple cases of the code with different values of :math:`\Delta y'` (i.e. 0.1, 0.05, 0.025, 0.0125). Make a table and log-log plot of the peak RMS error (relative to the time-dependent exact solution) as a function of :math:`\Delta y'`. Based on these results, discuss whether or not your solver follows the theoretical order of spatial accuracy given by the TE expression for the scheme. Also, explain why it is important to use a small :math:`\Delta t'` when we investigate the spatial accuracy of this scheme.
+
+
+- Comparison of Peak RMS error as a function of spatial and temporal steps
+
++------------+--------+----------------------------------------------+----------------------------------------------+
+| dy         | jmax   | Peak RMS error (:math:`\Delta t` = 0.000625) | Peak RMS error (:math:`\Delta t` = 0.0002)   |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.1        | 11     | 0.309370E-02                                 | 0.252525E-02                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.05       | 21     | 0.136823E-02                                 | 0.811529E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.025      | 41     | 0.945456E-03                                 | 0.395090E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.0125     | 81     | 0.838836E-03                                 | 0.291753E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.00625    | 161    | 0.811120E-03                                 | 0.265708E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.003125   | 321    | 0.803589E-03                                 | 0.259019E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.0015625  | 641    | 0.801397E-03                                 | 0.257250E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+| 0.00078125 | 1281   | 0.800693E-03                                 | 0.256758E-03                                 |
++------------+--------+----------------------------------------------+----------------------------------------------+
+
+.. image:: ./images/peakRMS_9.png
+   :width: 50%
+
+
+J) Result #10
+-------------
+
+Investigate the temporal order of accuracy of the code for :math:`\theta` = 1 and :math:`\theta` = 1/2. Do this by using jmax = 51 and various :math:`\Delta t'` (i.e. 0.02, 0.01, 0.005, 0.0025, 0.00125, 0.000625). Make tables and a log-log plots of the peak RMS error (relative to the time-dependent exact solution) as a function :math:`\Delta t'` for :math:`\theta` = 1 and :math:`\theta` = 1/2. Based on these results, discuss whether or not your solver follows the theoretical order of temporal accuracy given by the TE expression for the scheme.
+
+
++-----------+-------------------------------------+---------------------------------------+
+| dt        | Peak RMS error (:math:`\Theta` = 1) | Peak RMS error (:math:`\Theta` = 1/2) |
++-----------+-------------------------------------+---------------------------------------+
+| 1000      | 0.723888E-04                        | 0.713996                              |
++-----------+-------------------------------------+---------------------------------------+
+| 100       | 0.723228E-03                        | 0.711396                              |
++-----------+-------------------------------------+---------------------------------------+
+| 10        | 0.716697E-02                        | 0.685903                              |
++-----------+-------------------------------------+---------------------------------------+
+| 1         | 0.656967E-01                        | 0.473546                              |
++-----------+-------------------------------------+---------------------------------------+
+| 0.1       | 0.933255E-01                        | 0.238631E-01                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.05      | 0.540879E-01                        | 0.538846E-02                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.02      | 0.240539E-01                        | 0.769763E-03                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.01      | 0.125364E-01                        | 0.126926E-03                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.005     | 0.643658E-02                        | 0.331436E-04                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.0025    | 0.329430E-02                        | 0.731227E-04                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.00125   | 0.169854E-02                        | 0.831203E-04                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.000625  | 0.894559E-03                        | 0.856183E-04                          |
++-----------+-------------------------------------+---------------------------------------+
+| 0.0002    | 0.345497E-03                        | 0.863658E-04                          |
++-----------+-------------------------------------+---------------------------------------+
+
+.. image:: ./images/peakRMS_10.png
+   :width: 50%

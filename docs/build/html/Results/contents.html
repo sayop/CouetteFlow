@@ -50,43 +50,40 @@
 <h1>Results summary<a class="headerlink" href="#results-summary" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="a-result-1">
 <h2>A) Result #1<a class="headerlink" href="#a-result-1" title="Permalink to this headline">¶</a></h2>
-<p>Show the expression for <span class="math">\(\tau\)</span> that non-dimensionalizes the governing PDE. Show the non-dimensionalized form of the governing PDE.</p>
+<p><strong>Q.</strong> Show the expression for <span class="math">\(\tau\)</span> that non-dimensionalizes the governing PDE. Show the non-dimensionalized form of the governing PDE.</p>
 </div>
 <div class="section" id="b-result-2">
 <h2>B) Result #2<a class="headerlink" href="#b-result-2" title="Permalink to this headline">¶</a></h2>
-<p>Show the non-dimensionalized form of the time-dependent exact solution expression for the specified boundary and initial conditions given in this problem.</p>
+<p><strong>Q.</strong> Show the non-dimensionalized form of the time-dependent exact solution expression for the specified boundary and initial conditions given in this problem.</p>
 </div>
 <div class="section" id="c-result-3">
 <h2>C) Result #3<a class="headerlink" href="#c-result-3" title="Permalink to this headline">¶</a></h2>
-<p>Provide a brief description of the finite difference scheme scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.</p>
+<p><strong>Q.</strong> Provide a brief description of the finite difference scheme scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.</p>
 </div>
 <div class="section" id="d-result-4">
 <h2>D) Result #4<a class="headerlink" href="#d-result-4" title="Permalink to this headline">¶</a></h2>
-<p>Show the expression used for calculating the RMS Error relative to the time-dependent exact solution. Also show the expression used for calculating the RMS Error relative to the steady-state exact solution. Also, give a statement of the criteria used to end the calculations.</p>
+<p><strong>Q.</strong> Show the expression used for calculating the RMS Error relative to the time-dependent exact solution. Also show the expression used for calculating the RMS Error relative to the steady-state exact solution. Also, give a statement of the criteria used to end the calculations.</p>
 </div>
 <div class="section" id="e-result-5">
 <h2>E) Result #5<a class="headerlink" href="#e-result-5" title="Permalink to this headline">¶</a></h2>
-<p>For <span class="math">\(\theta = 0\)</span> and <span class="math">\(\text{jmax} = 51\)</span>, state the maximum value of <span class="math">\(\Delta t\)</span> for which a stable solution is obtained. Provide a semi-log plot of the RMS error (relative to the time-dependent exact solution) vs iteration number (using a <span class="math">\(\Delta t\)</span> for which the code is stable). Create a similar plot of the RMS error (relative to the steady-state exact solution) vs. iteration number.</p>
-<blockquote>
-<div><p>Given conditions, the non-dimensional spatial step size results in <span class="math">\(\Delta y' = 0.0002\)</span>. Performing Von Neumann stability analysis on the given conditions give rise to the below time step criterion:</p>
+<p><strong>Q.</strong> For <span class="math">\(\theta = 0\)</span> and <span class="math">\(\text{jmax} = 51\)</span>, state the maximum value of <span class="math">\(\Delta t\)</span> for which a stable solution is obtained. Provide a semi-log plot of the RMS error (relative to the time-dependent exact solution) vs iteration number (using a <span class="math">\(\Delta t\)</span> for which the code is stable). Create a similar plot of the RMS error (relative to the steady-state exact solution) vs. iteration number.</p>
+<p><strong>A.</strong> Given conditions, the non-dimensional spatial step size results in <span class="math">\(\Delta y' = 0.0002\)</span>. Performing Von Neumann stability analysis on the given conditions give rise to the below time step criterion:</p>
 <div class="math">
 \[\Delta t' \leqslant \frac{\Delta y'^{2}}{4\left ( \frac{1}{2} - \theta \right )}\]</div>
 <p>Thus, the maximum time step to stabilize the scheme is determined as <span class="math">\(\Delta t' = 0.0002\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/RMSlog_5.png"><img alt="../_images/RMSlog_5.png" src="../_images/RMSlog_5.png" style="width: 50%;" /></a>
-</div></blockquote>
 </div>
 <div class="section" id="f-result-6">
 <h2>F) Result #6<a class="headerlink" href="#f-result-6" title="Permalink to this headline">¶</a></h2>
-<p>For <span class="math">\(\theta = 0\)</span>, present a graph which clearly shows the progression of velocity profiles during the flow development when <span class="math">\(\text{jmax} = 51\)</span>. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for <span class="math">\(\theta = 1/2\)</span> and <span class="math">\(\theta = 1\)</span>.</p>
+<p><strong>Q.</strong> For <span class="math">\(\theta = 0\)</span>, present a graph which clearly shows the progression of velocity profiles during the flow development when <span class="math">\(\text{jmax} = 51\)</span>. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for <span class="math">\(\theta = 1/2\)</span> and <span class="math">\(\theta = 1\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.png"><img alt="../_images/Vel_6_theta0.png" src="../_images/Vel_6_theta0.png" style="width: 50%;" /></a>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.5.png"><img alt="../_images/Vel_6_theta0.5.png" src="../_images/Vel_6_theta0.5.png" style="width: 50%;" /></a>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta1.png"><img alt="../_images/Vel_6_theta1.png" src="../_images/Vel_6_theta1.png" style="width: 50%;" /></a>
 </div>
 <div class="section" id="g-result-7">
 <h2>G) Result #7<a class="headerlink" href="#g-result-7" title="Permalink to this headline">¶</a></h2>
-<p>Provides a comparison of the stability behavior of your solver to the stability analysis performed in Homework Assignment #3. Compute <span class="math">\(\text{jmax} = 51\)</span> cases with <span class="math">\(\theta = 0\)</span>, <span class="math">\(1/2\)</span>, and <span class="math">\(1\)</span> using various values of <span class="math">\(\Delta t\)</span> to explore the stability boundaries of your solver. Show and discuss whether or not your solver follows the theoretical stability behavior of these three numerical schemes.</p>
-<blockquote>
-<div><p>From the HW#3&#8217;s solution, the stability analysis can be summarized by:</p>
+<p><strong>Q.</strong> Provides a comparison of the stability behavior of your solver to the stability analysis performed in Homework Assignment #3. Compute <span class="math">\(\text{jmax} = 51\)</span> cases with <span class="math">\(\theta = 0\)</span>, <span class="math">\(1/2\)</span>, and <span class="math">\(1\)</span> using various values of <span class="math">\(\Delta t\)</span> to explore the stability boundaries of your solver. Show and discuss whether or not your solver follows the theoretical stability behavior of these three numerical schemes.</p>
+<p><strong>A.</strong> From the HW#3&#8217;s solution, the stability analysis can be summarized by:</p>
 <ul class="simple">
 <li>Unconditionally stable if <span class="math">\(\theta \geqslant \frac{1}{2}\)</span></li>
 <li>Conditionally stable if <span class="math">\(0 \leqslant \theta &lt; \frac{1}{2}\)</span></li>
@@ -94,17 +91,266 @@
 <p>In the case of conditionally stable scheme, the maximum time step can be determined by using below relation so that the scheme is stable with given <span class="math">\(\theta\)</span>.</p>
 <div class="math">
 \[\Delta t \leqslant \frac{\Delta y^{2}}{4\left ( \frac{1}{2}-\theta \right )}\]</div>
-<p>Thus, for <span class="math">\(\theta = 0\)</span>, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value.</p>
-<ol class="arabic simple">
+<p>Thus, for <span class="math">\(\theta = 0\)</span>, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value. If you can&#8217;t see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: <a class="reference external" href="http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7">http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7</a></p>
+<div class="section" id="fully-explicit">
+<h3>1) <span class="math">\(\theta\)</span> = 0 (Fully explicit)<a class="headerlink" href="#fully-explicit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math">\(dt' = 0.0001\)</span></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/RMSlog_7_0.0001.png"><img alt="../_images/RMSlog_7_0.0001.png" src="../_images/RMSlog_7_0.0001.png" style="width: 50%;" /></a>
+<ul class="simple">
 <li><span class="math">\(dt' = 0.0002\)</span></li>
-</ol>
+</ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.0002.png"><img alt="../_images/RMSlog_7_0.0002.png" src="../_images/RMSlog_7_0.0002.png" style="width: 50%;" /></a>
-<ol class="arabic simple" start="2">
+<a class="reference internal image-reference" href="../_images/Vel_7_theta0_0.0002.gif"><img alt="../_images/Vel_7_theta0_0.0002.gif" src="../_images/Vel_7_theta0_0.0002.gif" style="width: 50%;" /></a>
+<ul class="simple">
 <li><span class="math">\(dt' = 0.000201\)</span></li>
-</ol>
+</ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.000201.png"><img alt="../_images/RMSlog_7_0.000201.png" src="../_images/RMSlog_7_0.000201.png" style="width: 50%;" /></a>
-<a class="reference internal image-reference" href="../_images/Velocity.gif"><img alt="../_images/Velocity.gif" src="../_images/Velocity.gif" style="width: 50%;" /></a>
-</div></blockquote>
+<a class="reference internal image-reference" href="../_images/Vel_7_theta0_0.000201.gif"><img alt="../_images/Vel_7_theta0_0.000201.gif" src="../_images/Vel_7_theta0_0.000201.gif" style="width: 50%;" /></a>
+</div>
+<div class="section" id="crank-nicolson-scheme">
+<h3>2) <span class="math">\(\theta\)</span> = 1/2 (Crank-Nicolson scheme)<a class="headerlink" href="#crank-nicolson-scheme" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Convergence check with the various time step:</strong></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Non-dimensional time step <span class="math">\(\Delta t'\)</span></td>
+<td>Maximum iteration for convergence</td>
+</tr>
+<tr class="row-even"><td>0.0001</td>
+<td>15996</td>
+</tr>
+<tr class="row-odd"><td>0.001</td>
+<td>1600</td>
+</tr>
+<tr class="row-even"><td>0.01</td>
+<td>160</td>
+</tr>
+<tr class="row-odd"><td>0.1</td>
+<td>15</td>
+</tr>
+<tr class="row-even"><td>1.0</td>
+<td>39</td>
+</tr>
+<tr class="row-odd"><td>10.0</td>
+<td>390</td>
+</tr>
+<tr class="row-even"><td>100.0</td>
+<td>3893</td>
+</tr>
+<tr class="row-odd"><td>1000.0</td>
+<td>38927</td>
+</tr>
+<tr class="row-even"><td>10000.0</td>
+<td>389268</td>
+</tr>
+<tr class="row-odd"><td>100000.0</td>
+<td>Not converged within 999999 iterations</td>
+</tr>
+</tbody>
+</table>
+<p>All the cases above seem to be stable but the convergence is strongly sensitive to how big or small time step is. The interesting pattern to be observed here is that the maximum iteration number for convergence shows quadratic behavior. That is, quite small and quite big time step require long iterations. In particular, big time steps, 1000, 10000, and 100000 for examples, take long period to make the scheme converged into the specified RMS residual. This is somewhat unphysical. If 10,000 sec is taken as a time step, it will take about 123 years for the flow to be settled down to the steady-state.</p>
+<p>The stability check can be done by looking at the movies as a function of different time-step. If you can&#8217;t see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: <a class="reference external" href="http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7">http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7</a></p>
+<ul class="simple">
+<li><span class="math">\(dt' = 0.0001\)</span></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Vel_7_theta0.5_0.0001.gif"><img alt="../_images/Vel_7_theta0.5_0.0001.gif" src="../_images/Vel_7_theta0.5_0.0001.gif" style="width: 50%;" /></a>
+<ul class="simple">
+<li><span class="math">\(dt' = 1000\)</span></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Vel_7_theta0.5_1000.gif"><img alt="../_images/Vel_7_theta0.5_1000.gif" src="../_images/Vel_7_theta0.5_1000.gif" style="width: 50%;" /></a>
+</div>
+<div class="section" id="fully-implicit">
+<h3>3) <span class="math">\(\theta\)</span> = 1 (Fully implicit)<a class="headerlink" href="#fully-implicit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Convergence check with the various time step:</strong></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Non-dimensional time step <span class="math">\(\Delta t'\)</span></td>
+<td>Maximum iteration for convergence</td>
+</tr>
+<tr class="row-even"><td>0.0001</td>
+<td>16004</td>
+</tr>
+<tr class="row-odd"><td>0.001</td>
+<td>1608</td>
+</tr>
+<tr class="row-even"><td>0.01</td>
+<td>168</td>
+</tr>
+<tr class="row-odd"><td>0.1</td>
+<td>23</td>
+</tr>
+<tr class="row-even"><td>1.0</td>
+<td>7</td>
+</tr>
+<tr class="row-odd"><td>10.0</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>100.0</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>1000.0</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>10000.0</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>100000.0</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>All the tested cases above are stable and the convergence performance is enhanced as the time step increases.</p>
+</div>
+</div>
+<div class="section" id="h-result-8">
+<h2>H) Result #8<a class="headerlink" href="#h-result-8" title="Permalink to this headline">¶</a></h2>
+<p>Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of <span class="math">\(\theta\)</span>. Note: You are not required to derive the TE expression.</p>
+</div>
+<div class="section" id="i-result-9">
+<h2>I) Result #9<a class="headerlink" href="#i-result-9" title="Permalink to this headline">¶</a></h2>
+<p>Investigate the spatial order of accuracy of the code for <span class="math">\(\theta\)</span> = 1. Do this by using a small value of <span class="math">\(\Delta t'\)</span> = 0.000625 and running multiple cases of the code with different values of <span class="math">\(\Delta y'\)</span> (i.e. 0.1, 0.05, 0.025, 0.0125). Make a table and log-log plot of the peak RMS error (relative to the time-dependent exact solution) as a function of <span class="math">\(\Delta y'\)</span>. Based on these results, discuss whether or not your solver follows the theoretical order of spatial accuracy given by the TE expression for the scheme. Also, explain why it is important to use a small <span class="math">\(\Delta t'\)</span> when we investigate the spatial accuracy of this scheme.</p>
+<ul class="simple">
+<li>Comparison of Peak RMS error as a function of spatial and temporal steps</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="7%" />
+<col width="41%" />
+<col width="41%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>dy</td>
+<td>jmax</td>
+<td>Peak RMS error (<span class="math">\(\Delta t\)</span> = 0.000625)</td>
+<td>Peak RMS error (<span class="math">\(\Delta t\)</span> = 0.0002)</td>
+</tr>
+<tr class="row-even"><td>0.1</td>
+<td>11</td>
+<td>0.309370E-02</td>
+<td>0.252525E-02</td>
+</tr>
+<tr class="row-odd"><td>0.05</td>
+<td>21</td>
+<td>0.136823E-02</td>
+<td>0.811529E-03</td>
+</tr>
+<tr class="row-even"><td>0.025</td>
+<td>41</td>
+<td>0.945456E-03</td>
+<td>0.395090E-03</td>
+</tr>
+<tr class="row-odd"><td>0.0125</td>
+<td>81</td>
+<td>0.838836E-03</td>
+<td>0.291753E-03</td>
+</tr>
+<tr class="row-even"><td>0.00625</td>
+<td>161</td>
+<td>0.811120E-03</td>
+<td>0.265708E-03</td>
+</tr>
+<tr class="row-odd"><td>0.003125</td>
+<td>321</td>
+<td>0.803589E-03</td>
+<td>0.259019E-03</td>
+</tr>
+<tr class="row-even"><td>0.0015625</td>
+<td>641</td>
+<td>0.801397E-03</td>
+<td>0.257250E-03</td>
+</tr>
+<tr class="row-odd"><td>0.00078125</td>
+<td>1281</td>
+<td>0.800693E-03</td>
+<td>0.256758E-03</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../_images/peakRMS_9.png"><img alt="../_images/peakRMS_9.png" src="../_images/peakRMS_9.png" style="width: 50%;" /></a>
+</div>
+<div class="section" id="j-result-10">
+<h2>J) Result #10<a class="headerlink" href="#j-result-10" title="Permalink to this headline">¶</a></h2>
+<p>Investigate the temporal order of accuracy of the code for <span class="math">\(\theta\)</span> = 1 and <span class="math">\(\theta\)</span> = 1/2. Do this by using jmax = 51 and various <span class="math">\(\Delta t'\)</span> (i.e. 0.02, 0.01, 0.005, 0.0025, 0.00125, 0.000625). Make tables and a log-log plots of the peak RMS error (relative to the time-dependent exact solution) as a function <span class="math">\(\Delta t'\)</span> for <span class="math">\(\theta\)</span> = 1 and <span class="math">\(\theta\)</span> = 1/2. Based on these results, discuss whether or not your solver follows the theoretical order of temporal accuracy given by the TE expression for the scheme.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="43%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>dt</td>
+<td>Peak RMS error (<span class="math">\(\Theta\)</span> = 1)</td>
+<td>Peak RMS error (<span class="math">\(\Theta\)</span> = 1/2)</td>
+</tr>
+<tr class="row-even"><td>1000</td>
+<td>0.723888E-04</td>
+<td>0.713996</td>
+</tr>
+<tr class="row-odd"><td>100</td>
+<td>0.723228E-03</td>
+<td>0.711396</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>0.716697E-02</td>
+<td>0.685903</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0.656967E-01</td>
+<td>0.473546</td>
+</tr>
+<tr class="row-even"><td>0.1</td>
+<td>0.933255E-01</td>
+<td>0.238631E-01</td>
+</tr>
+<tr class="row-odd"><td>0.05</td>
+<td>0.540879E-01</td>
+<td>0.538846E-02</td>
+</tr>
+<tr class="row-even"><td>0.02</td>
+<td>0.240539E-01</td>
+<td>0.769763E-03</td>
+</tr>
+<tr class="row-odd"><td>0.01</td>
+<td>0.125364E-01</td>
+<td>0.126926E-03</td>
+</tr>
+<tr class="row-even"><td>0.005</td>
+<td>0.643658E-02</td>
+<td>0.331436E-04</td>
+</tr>
+<tr class="row-odd"><td>0.0025</td>
+<td>0.329430E-02</td>
+<td>0.731227E-04</td>
+</tr>
+<tr class="row-even"><td>0.00125</td>
+<td>0.169854E-02</td>
+<td>0.831203E-04</td>
+</tr>
+<tr class="row-odd"><td>0.000625</td>
+<td>0.894559E-03</td>
+<td>0.856183E-04</td>
+</tr>
+<tr class="row-even"><td>0.0002</td>
+<td>0.345497E-03</td>
+<td>0.863658E-04</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../_images/peakRMS_10.png"><img alt="../_images/peakRMS_10.png" src="../_images/peakRMS_10.png" style="width: 50%;" /></a>
 </div>
 </div>
 
@@ -123,7 +369,15 @@
 <li><a class="reference internal" href="#d-result-4">D) Result #4</a></li>
 <li><a class="reference internal" href="#e-result-5">E) Result #5</a></li>
 <li><a class="reference internal" href="#f-result-6">F) Result #6</a></li>
-<li><a class="reference internal" href="#g-result-7">G) Result #7</a></li>
+<li><a class="reference internal" href="#g-result-7">G) Result #7</a><ul>
+<li><a class="reference internal" href="#fully-explicit">1) <span class="math">\(\theta\)</span> = 0 (Fully explicit)</a></li>
+<li><a class="reference internal" href="#crank-nicolson-scheme">2) <span class="math">\(\theta\)</span> = 1/2 (Crank-Nicolson scheme)</a></li>
+<li><a class="reference internal" href="#fully-implicit">3) <span class="math">\(\theta\)</span> = 1 (Fully implicit)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#h-result-8">H) Result #8</a></li>
+<li><a class="reference internal" href="#i-result-9">I) Result #9</a></li>
+<li><a class="reference internal" href="#j-result-10">J) Result #10</a></li>
 </ul>
 </li>
 </ul>

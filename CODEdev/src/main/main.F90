@@ -51,7 +51,7 @@ PROGRAM main
    IF(iCONVERGE .NE. 1) THEN
       WRITE(*,'(A,I6.6,A)') "### CONVERGENCE IS NOT ACHIEVED WITHIN ",iterMax," ITERATIONS!!!"
    ENDIF
-   WRITE(*,'(A,g15.6)') "### Maximum RMS error based on Steady-State: ", MaxRMSerrUS
+   WRITE(*,'(A,g15.6)') "### Maximum RMS error based on Unsteady-State: ", MaxRMSerrUS
 
 END PROGRAM main
 

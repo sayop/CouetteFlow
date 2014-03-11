@@ -5,7 +5,7 @@ distL		1.0
 nu		1.0
 jmax		51
 theta		0.5
-dt		100.0
+dt		1000
 iterMax		999999
-nIterOut	500
+nIterOut	501
 RMSlimit	1.0e-7
