@@ -74,16 +74,15 @@ Provides a comparison of the stability behavior of your solver to the stability 
 
   Thus, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value.
 
-  .. table::
-     :class: borderless
+  (1) :math:`dt' = 0.0002`
 
-     +------------------------------------------+--------------------------------------------+
-     | - :math:`dt' = 0.0002`                   | - :math:`dt' = 0.000201`                   |
-     +------------------------------------------+--------------------------------------------+
-     | .. image:: ./images/RMSlog_7_0.0002.png  | .. image:: ./images/RMSlog_7_0.000201.png  |
-     |    :width: 80%                           |    :width: 80%                             |
-     |                                          |                                            |
-     +------------------------------------------+--------------------------------------------+
+  .. image:: ./images/RMSlog_7_0.0002.png
+     :width: 50%
+
+  (2) :math:`dt' = 0.000201`
+
+  .. image:: ./images/RMSlog_7_0.000201.png
+     :width: 50%
 
 
   .. image:: ./movies/Velocity.gif
