@@ -3,20 +3,33 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to CouetteFlow's documentation!
-=======================================
+Documentation for Couette Flow problem
+======================================
 
-Contents:
+This documentation pages are made for CFD class at Georgia Tech in 2014 Spring. This is online available at http://CouetteFlow.readthedocs.org
+
+Author: Sayop Kim(sayopkim@gatech.edu)
+
+Affiliation: School of Aerospace Engineering, Georgia Institute of Technology
+
+Contents
+========
 
 .. toctree::
    :maxdepth: 2
 
+   PrjDescription/contents
+   CodeDevel/contents
+   HowToRun/contents
+   Results/contents
+   code
 
+FORTRAN 90 Source code
+======================
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   FortranSrcs/CMakeLists
+   FortranSrcs/io/srcs
+   FortranSrcs/main/srcs
