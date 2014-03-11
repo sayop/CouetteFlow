@@ -82,6 +82,7 @@ Provides a comparison of the stability behavior of your solver to the stability 
      +-----------------------------------------+-------------------------------------------+
      | .. image:: ./images/RMSlog_7_0.0002.png | .. image:: ./images/RMSlog_7_0.000201.png |
      |    :width: 80%                          |    :width: 80%                            |
+     |                                         |                                           |
      +-----------------------------------------+-------------------------------------------+
 
 
