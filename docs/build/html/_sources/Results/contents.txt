@@ -6,23 +6,82 @@ A) Result #1
 
 **Q.** Show the expression for :math:`\tau` that non-dimensionalizes the governing PDE. Show the non-dimensionalized form of the governing PDE.
 
+- Non-dimensionalized variables:
+
+  :math:`u' = \frac{u}{u_{top}}`, :math:`t' = \frac{t}{\tau}`, :math:`y' = \frac{y}{L}`
+
+  where :math:`\tau = \frac{L^{2}}{\nu}
+
+- Non-dimensionalized governing PDE:
+
+  :math:`\frac{\partial u'}{\partial t'} = \frac{\partial^{2}u'}{\partial y'^{2}}`
+
 
 B) Result #2
 ------------
 
 **Q.** Show the non-dimensionalized form of the time-dependent exact solution expression for the specified boundary and initial conditions given in this problem.
 
+To find the time-dependent exact solution, we need to first find :math:`a_{n}` which satisfies the given initial velocity profile. The resolved form of :math:`a_{n}` is then re-written as:
+
+.. math::
+   a_{n} = \left\{\begin{matrix} 1 \text{  if } n = 1 \\ 0 \text{  if } n \neq  1 \end{matrix}\right.
+
+Thus, applying the resolved :math:`a_{n}` into the given exact solution results in:
+
+.. math::
+   u'_{exact}(t',y') = y' + \text{sin}(\pi y') \text{exp}[-\pi^{2}t']
+
 
 C) Result #3
 ------------
 
-**Q.** Provide a brief description of the finite difference scheme scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.
+**Q.** Provide a brief description of the finite difference scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.
 
+Given finite difference scheme has a weighting parameter :math:`\Theta` to put an effect of implicit solution. If :math:`\Theta` is equal to 1, the scheme becomes to fully implicit, otherwise, the scheme can be partially implicit or explicit (:math:`\Theta` = 0). Rearranging the given finite difference equation leads to the following simplified form:
+
+.. math::
+   A_{j} u^{n+1}_{j+1} + B_{j} u^{n+1}_{j} + C_{j} u^{n+1}_{j+1} = D_{j}
+
+where
+
+.. math::
+   A_{j} = -r \theta
+
+   B_{j} = 1 + 2r\theta
+
+   C_{j} = -r\theta
+
+   D_{j} + r(1-\theta)\left \{ u^{n}_{j-1} - 2u^{n}_{j} + u^{n}_{j+1} \right \}
+
+Here, the resulting equation has simplified coefficient :math:`r = \frac{\Delta t'}{\Delta y'^{2}}`.
+
+For the boundary condition, non-slip condition is applied to both upper and bottom plates. Thus, :math:`y(0) = 0` and :math:`y(L)=1` remain unchanged while the inner point quantities varies during the transient phase. The initial condition described earlier can satisfy the given boundary condition here. The Thomas algorithm is set to unchange the boundary condition as the time varies.
 
 D) Result #4
 ------------
 
 **Q.** Show the expression used for calculating the RMS Error relative to the time-dependent exact solution. Also show the expression used for calculating the RMS Error relative to the steady-state exact solution. Also, give a statement of the criteria used to end the calculations.
+
+In this project, two different types of RMS error formulation are used:
+
+- RMS error relative to the exact time-dependent solution
+
+  .. math::
+     \text{RMS}_{\text{NSS}}(t) = \sqrt{\frac{1}{N} \sum_{\text{j}=2}^{\text{jmax}-1} \left [ \left ( u'_{exact,j}(t) - u'^{n} \right )^{2}  \right ]}
+
+  where N is number of inner grid points.
+
+- RMS error relative to the exact steady-state solution:
+
+  .. math::
+     \text{RMS}_{\text{SS}}(t) = \sqrt{\frac{1}{N} \sum_{\text{j}=2}^{\text{jmax}-1} \left [ \left ( u'_{exact,j}(t=\infty ) - u'^{n} \right )^{2}  \right ]}
+
+- The convergence criteria is limited by the following relation:
+
+  .. math::
+     \text{RMS}_{\text{SS}}(t) \leqslant 1\times 10^{-7}
+
 
 
 E) Result #5
@@ -54,7 +113,7 @@ F) Result #6
    :width: 80% 
 
 .. image:: ./images/Vel_6_theta1.png
-   :width: 888888880%
+   :width: 80%
 
 G) Result #7
 ------------

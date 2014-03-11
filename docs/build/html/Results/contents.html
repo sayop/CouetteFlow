@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="CouetteFlow 0.0.1 documentation" href="../index.html" />
-    <link rel="prev" title="Project description" href="../PrjDescription/contents.html" /> 
+    <link rel="prev" title="How to run the code" href="../HowToRun/contents.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,7 +35,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../PrjDescription/contents.html" title="Project description"
+          <a href="../HowToRun/contents.html" title="How to run the code"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -51,18 +51,57 @@
 <div class="section" id="a-result-1">
 <h2>A) Result #1<a class="headerlink" href="#a-result-1" title="Permalink to this headline">¶</a></h2>
 <p><strong>Q.</strong> Show the expression for <span class="math">\(\tau\)</span> that non-dimensionalizes the governing PDE. Show the non-dimensionalized form of the governing PDE.</p>
+<ul>
+<li><p class="first">Non-dimensionalized variables:</p>
+<p><span class="math">\(u' = \frac{u}{u_{top}}\)</span>, <span class="math">\(t' = \frac{t}{\tau}\)</span>, <span class="math">\(y' = \frac{y}{L}\)</span></p>
+<p>where :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>tau = frac{L^{2}}{nu}</p>
+</li>
+<li><p class="first">Non-dimensionalized governing PDE:</p>
+<p><span class="math">\(\frac{\partial u'}{\partial t'} = \frac{\partial^{2}u'}{\partial y'^{2}}\)</span></p>
+</li>
+</ul>
 </div>
 <div class="section" id="b-result-2">
 <h2>B) Result #2<a class="headerlink" href="#b-result-2" title="Permalink to this headline">¶</a></h2>
 <p><strong>Q.</strong> Show the non-dimensionalized form of the time-dependent exact solution expression for the specified boundary and initial conditions given in this problem.</p>
+<p>To find the time-dependent exact solution, we need to first find <span class="math">\(a_{n}\)</span> which satisfies the given initial velocity profile. The resolved form of <span class="math">\(a_{n}\)</span> is then re-written as:</p>
+<div class="math">
+\[\begin{split}a_{n} = \left\{\begin{matrix} 1 \text{  if } n = 1 \\ 0 \text{  if } n \neq  1 \end{matrix}\right.\end{split}\]</div>
+<p>Thus, applying the resolved <span class="math">\(a_{n}\)</span> into the given exact solution results in:</p>
+<div class="math">
+\[u'_{exact}(t',y') = y' + \text{sin}(\pi y') \text{exp}[-\pi^{2}t']\]</div>
 </div>
 <div class="section" id="c-result-3">
 <h2>C) Result #3<a class="headerlink" href="#c-result-3" title="Permalink to this headline">¶</a></h2>
-<p><strong>Q.</strong> Provide a brief description of the finite difference scheme scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.</p>
+<p><strong>Q.</strong> Provide a brief description of the finite difference scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.</p>
+<p>Given finite difference scheme has a weighting parameter <span class="math">\(\Theta\)</span> to put an effect of implicit solution. If <span class="math">\(\Theta\)</span> is equal to 1, the scheme becomes to fully implicit, otherwise, the scheme can be partially implicit or explicit (<span class="math">\(\Theta\)</span> = 0). Rearranging the given finite difference equation leads to the following simplified form:</p>
+<div class="math">
+\[A_{j} u^{n+1}_{j+1} + B_{j} u^{n+1}_{j} + C_{j} u^{n+1}_{j+1} = D_{j}\]</div>
+<p>where</p>
+<div class="math">
+\[A_{j} = -r \theta\]\[B_{j} = 1 + 2r\theta\]\[C_{j} = -r\theta\]\[D_{j} + r(1-\theta)\left \{ u^{n}_{j-1} - 2u^{n}_{j} + u^{n}_{j+1} \right \}\]</div>
+<p>Here, the resulting equation has simplified coefficient <span class="math">\(r = \frac{\Delta t'}{\Delta y'^{2}}\)</span>.</p>
+<p>For the boundary condition, non-slip condition is applied to both upper and bottom plates. Thus, <span class="math">\(y(0) = 0\)</span> and <span class="math">\(y(L)=1\)</span> remain unchanged while the inner point quantities varies during the transient phase. The initial condition described earlier can satisfy the given boundary condition here. The Thomas algorithm is set to unchange the boundary condition as the time varies.</p>
 </div>
 <div class="section" id="d-result-4">
 <h2>D) Result #4<a class="headerlink" href="#d-result-4" title="Permalink to this headline">¶</a></h2>
 <p><strong>Q.</strong> Show the expression used for calculating the RMS Error relative to the time-dependent exact solution. Also show the expression used for calculating the RMS Error relative to the steady-state exact solution. Also, give a statement of the criteria used to end the calculations.</p>
+<p>In this project, two different types of RMS error formulation are used:</p>
+<ul>
+<li><p class="first">RMS error relative to the exact time-dependent solution</p>
+<div class="math">
+\[\text{RMS}_{\text{NSS}}(t) = \sqrt{\frac{1}{N} \sum_{\text{j}=2}^{\text{jmax}-1} \left [ \left ( u'_{exact,j}(t) - u'^{n} \right )^{2}  \right ]}\]</div>
+<p>where N is number of inner grid points.</p>
+</li>
+<li><p class="first">RMS error relative to the exact steady-state solution:</p>
+<div class="math">
+\[\text{RMS}_{\text{SS}}(t) = \sqrt{\frac{1}{N} \sum_{\text{j}=2}^{\text{jmax}-1} \left [ \left ( u'_{exact,j}(t=\infty ) - u'^{n} \right )^{2}  \right ]}\]</div>
+</li>
+<li><p class="first">The convergence criteria is limited by the following relation:</p>
+<div class="math">
+\[\text{RMS}_{\text{SS}}(t) \leqslant 1\times 10^{-7}\]</div>
+</li>
+</ul>
 </div>
 <div class="section" id="e-result-5">
 <h2>E) Result #5<a class="headerlink" href="#e-result-5" title="Permalink to this headline">¶</a></h2>
@@ -78,7 +117,7 @@
 <p><strong>Q.</strong> For <span class="math">\(\theta = 0\)</span>, present a graph which clearly shows the progression of velocity profiles during the flow development when <span class="math">\(\text{jmax} = 51\)</span>. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for <span class="math">\(\theta = 1/2\)</span> and <span class="math">\(\theta = 1\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.png"><img alt="../_images/Vel_6_theta0.png" src="../_images/Vel_6_theta0.png" style="width: 80%;" /></a>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.5.png"><img alt="../_images/Vel_6_theta0.5.png" src="../_images/Vel_6_theta0.5.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="../_images/Vel_6_theta1.png"><img alt="../_images/Vel_6_theta1.png" src="../_images/Vel_6_theta1.png" style="width: 888888880%;" /></a>
+<a class="reference internal image-reference" href="../_images/Vel_6_theta1.png"><img alt="../_images/Vel_6_theta1.png" src="../_images/Vel_6_theta1.png" style="width: 80%;" /></a>
 </div>
 <div class="section" id="g-result-7">
 <h2>G) Result #7<a class="headerlink" href="#g-result-7" title="Permalink to this headline">¶</a></h2>
@@ -383,8 +422,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../PrjDescription/contents.html"
-                        title="previous chapter">Project description</a></p>
+  <p class="topless"><a href="../HowToRun/contents.html"
+                        title="previous chapter">How to run the code</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/Results/contents.txt"
@@ -414,7 +453,7 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../PrjDescription/contents.html" title="Project description"
+          <a href="../HowToRun/contents.html" title="How to run the code"
              >previous</a> |</li>
         <li><a href="../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
       </ul>
