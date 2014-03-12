@@ -38,22 +38,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src
+CMAKE_SOURCE_DIR = /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build
+CMAKE_BINARY_DIR = /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/cfd.x.dir
@@ -63,7 +60,7 @@ CMakeFiles/cfd.x.dir/all:
 	$(MAKE) -f CMakeFiles/cfd.x.dir/build.make CMakeFiles/cfd.x.dir/depend
 	$(MAKE) -f CMakeFiles/cfd.x.dir/build.make CMakeFiles/cfd.x.dir/requires
 	$(MAKE) -f CMakeFiles/cfd.x.dir/build.make CMakeFiles/cfd.x.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles  1 2 3 4 5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles  1 2 3 4 5
 	@echo "Built target cfd.x"
 .PHONY : CMakeFiles/cfd.x.dir/all
 
@@ -73,9 +70,9 @@ all: CMakeFiles/cfd.x.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cfd.x.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cfd.x.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/CMakeFiles 0
 .PHONY : CMakeFiles/cfd.x.dir/rule
 
 # Convenience name for target.

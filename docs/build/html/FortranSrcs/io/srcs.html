@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>io directory &mdash; CouetteFlow 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="CouetteFlow 0.0.1 documentation" href="../../index.html" />
+    <link rel="next" title="main directory" href="../main/srcs.html" />
+    <link rel="prev" title="MakeList.txt" href="../CMakeLists.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../main/srcs.html" title="main directory"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../CMakeLists.html" title="MakeList.txt"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="io-directory">
+<h1>io directory<a class="headerlink" href="#io-directory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cmakelists-txt">
+<h2>CMakeLists.txt<a class="headerlink" href="#cmakelists-txt" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>set(IO_SRC_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/io.F90 CACHE INTERNAL "" FORCE)</pre>
+</div>
+</div>
+<div class="section" id="io-f90">
+<h2>io.F90<a class="headerlink" href="#io-f90" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!&gt; \file: io.F90
+!&gt; \author: Sayop Kim
+!&gt; \brief: Provides routines to read input and write output
+
+MODULE io_m
+   USE Parameters_m, ONLY: wp
+
+   IMPLICIT NONE
+
+   PUBLIC :: ReadInput, WriteRMSlog, WriteDataOut
+
+   INTEGER :: nIterOut
+   INTEGER, PARAMETER :: IOunit = 10, filenameLength = 64
+   CHARACTER(LEN=50) :: prjTitle
+
+CONTAINS
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE ReadInput()
+!-----------------------------------------------------------------------------!
+!  Read input files
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: uTop, jmax, distL, nu, theta, dt, iterMax, &amp;
+                               RMSlimit
+      IMPLICIT NONE
+      INTEGER :: ios
+      CHARACTER(LEN=8) :: inputVar
+
+      OPEN(IOunit, FILE = 'input.dat', FORM = 'FORMATTED', ACTION = 'READ', &amp;
+            STATUS = 'OLD', IOSTAT = ios)
+      IF(ios /= 0) THEN
+         WRITE(*,'(a)') ""
+         WRITE(*,'(a)') "### Fatal error: Could not open the input data file."
+         RETURN
+      ELSE
+         WRITE(*,'(a)') ""
+         WRITE(*,'(a)') "### Reading input file for Couette Flow problem"
+      ENDIF
+
+      READ(IOunit,*)
+      READ(IOunit,'(a)') prjTitle
+      WRITE(*,'(4a)') '### Project Title:', '"',TRIM(prjTitle),'"'
+      READ(IOunit,*) inputVar, uTop
+      WRITE(*,'(a,f6.3)') inputVar, uTop
+      READ(IOunit,*) inputVar, distL
+      WRITE(*,'(a,f6.3)') inputVar, distL
+      READ(IOunit,*) inputVar, nu
+      WRITE(*,'(a,f6.3)') inputVar, nu
+      READ(IOunit,*) inputVar, jmax
+      WRITE(*,'(a,i6)') inputVar, jmax
+      READ(IOunit,*) inputVar, theta
+      WRITE(*,'(a,f6.3)') inputVar, theta
+      READ(IOunit,*) inputVar, dt
+      WRITE(*,'(a,f6.3)') inputVar, dt
+      READ(IOunit,*) inputVar, iterMax
+      WRITE(*,'(a,i6)') inputVar, iterMax
+      READ(IOunit,*) inputVar, nIterOut
+      WRITE(*,'(a,i6)') inputVar, nIterOut
+      READ(IOunit,*) inputVar, RMSlimit
+      WRITE(*,'(a,g15.6)') inputVar,RMSlimit
+   END SUBROUTINE ReadInput
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE WriteRMSlog(iter)
+!-----------------------------------------------------------------------------!
+!  Write RMS error log relative to unsteady and steady solutions
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: RMSerrUS, RMSerrSS
+
+      IMPLICIT NONE
+      INTEGER :: iter
+      CHARACTER(LEN=filenameLength) :: fileName = 'RMSlog.dat'
+
+      IF(iter .EQ. 1) THEN
+         OPEN(IOunit, File = fileName, FORM = 'FORMATTED', ACTION = 'WRITE')
+         WRITE(IOunit,'(A,3A10)') '#', 'Iteration', 'RMSerrUS', 'RMSerrSS'
+      ELSE
+         OPEN(IOunit, File = fileName, FORM = 'FORMATTED', ACTION = 'WRITE', &amp;
+              POSITION = 'APPEND')
+      ENDIF
+
+      WRITE(IOunit,'(i6,2g15.6)') iter, RMSerrUS, RMSerrSS
+      CLOSE(IOunit)
+
+   END SUBROUTINE WriteRMSlog
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE WriteDataOut(iter,time)
+!-----------------------------------------------------------------------------!
+!  Write RMS error log relative to unsteady and steady solutions
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: y, yp, u, up, uExac, upExac, jmax
+
+      IMPLICIT NONE
+      INTEGER :: iter, j
+      REAL(KIND=wp) :: time
+      CHARACTER(LEN=filenameLength) :: fileName
+
+      WRITE(fileName,'(A,i6.6,A)') "Data_", iter, ".dat"
+      WRITE(*,'(2A)') "PRINTING FILE:", fileName
+      OPEN(IOunit, File = fileName, FORM = 'FORMATTED', ACTION = 'WRITE')
+      WRITE(IOunit,'(A,g15.6)') "#Time=", time
+      WRITE(IOunit,'(A,6A15)') "#", "y", "u", "u_exac", "y'", "u'", "u'_exac"
+      DO j = 1, jmax
+         WRITE(IOunit,'(6g15.6)') y(j), u(j), uExac(j), yp(j), up(j), upExac(j)
+      END DO
+      CLOSE(IOunit)
+
+   END SUBROUTINE WriteDataOut
+END MODULE io_m</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">io directory</a><ul>
+<li><a class="reference internal" href="#cmakelists-txt">CMakeLists.txt</a></li>
+<li><a class="reference internal" href="#io-f90">io.F90</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../CMakeLists.html"
+                        title="previous chapter">MakeList.txt</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../main/srcs.html"
+                        title="next chapter">main directory</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/FortranSrcs/io/srcs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../main/srcs.html" title="main directory"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../CMakeLists.html" title="MakeList.txt"
+             >previous</a> |</li>
+        <li><a href="../../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Sayop Kim.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

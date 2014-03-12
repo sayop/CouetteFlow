@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>main directory &mdash; CouetteFlow 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="CouetteFlow 0.0.1 documentation" href="../../index.html" />
+    <link rel="prev" title="io directory" href="../io/srcs.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../io/srcs.html" title="io directory"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="main-directory">
+<h1>main directory<a class="headerlink" href="#main-directory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cmakelists-txt">
+<h2>CMakeLists.txt<a class="headerlink" href="#cmakelists-txt" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>set(MAIN_SRC_FILES
+   ${CMAKE_CURRENT_SOURCE_DIR}/main.F90
+   ${CMAKE_CURRENT_SOURCE_DIR}/SimulationSetup.F90
+   ${CMAKE_CURRENT_SOURCE_DIR}/SimulationVars.F90
+   ${CMAKE_CURRENT_SOURCE_DIR}/Parameters.F90 CACHE INTERNAL "" FORCE)</pre>
+</div>
+</div>
+<div class="section" id="main-f90">
+<h2>main.F90<a class="headerlink" href="#main-f90" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!&gt; \file: main.F90
+!&gt; \author: Sayop Kim
+
+PROGRAM main
+   USE Parameters_m, ONLY: wp
+   USE io_m, ONLY: ReadInput, WriteRMSlog, WriteDataOut, nIterOut
+   USE SimulationVars_m, ONLY: t, tp, dt, iterMax, RMSerrSS, RMSerrUS, &amp;
+                               RMSlimit
+   USE SimulationSetup_m, ONLY: Initialize, SetupBCIC, SetTimeStep, &amp;
+                                UpdateNonDimVars, UpdateDimVars, &amp;
+                                UpdateVelocity, CalSteadyExactSol, &amp;
+                                CalUnSteadyExactSol, CalRMSerrUnsteady, &amp;
+                                CalRMSerrSteady
+
+   IMPLICIT NONE
+   INTEGER :: iKill, nIter, iCONVERGE
+   REAL(KIND=wp) :: MaxRMSerrUS
+   MaxRMSerrUS = 0.0_wp
+
+   CALL ReadInput()
+   CALL Initialize()
+   CALL SetupBCIC()
+   IF(dt .EQ. 0.0_wp) THEN
+      iKill = 0
+      CALL SetTimeStep(iKill)
+      IF(iKill .EQ. 1) STOP
+   END IF
+
+   CALL CalSteadyExactSol()
+   CALL CalUnSteadyExactSol()
+   CALL WriteDataOut(0,t)
+   TimeLoop: DO nIter = 1, iterMax
+      t = t + dt
+      CALL UpdateNonDimVars()
+      CALL UpdateVelocity()
+      CALL CalUnSteadyExactSol()
+      CALL CalRMSerrUnsteady
+      CALL CalRMSerrSteady
+      MaxRMSerrUS = MAX(MaxRMSerrUS,RMSerrUS)
+      CALL WriteRMSlog(nIter)
+      IF(MOD(nIter, nIterOut) .EQ. 0) THEN
+         CALL WriteDataOut(nIter,t)
+      ENDIF
+      IF(RMSerrSS .LT. RMSlimit) THEN
+         iCONVERGE = 1
+         WRITE(*,'(A)') "### CONVERGENCE IS SUCCESSFULLY ACHIEVED!!!"
+         CALL WriteDataOut(nIter,t)
+         EXIT
+      ENDIF
+   END DO TimeLoop
+   IF(iCONVERGE .NE. 1) THEN
+      WRITE(*,'(A,I6.6,A)') "### CONVERGENCE IS NOT ACHIEVED WITHIN ",iterMax," ITERATIONS!!!"
+   ENDIF
+   WRITE(*,'(A,g15.6)') "### Maximum RMS error based on Unsteady-State: ", MaxRMSerrUS
+
+END PROGRAM main</pre>
+</div>
+</div>
+<div class="section" id="parameters-f90">
+<h2>Parameters.F90<a class="headerlink" href="#parameters-f90" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!&gt; \file parameters.F90
+!&gt; \author Sayop Kim
+!&gt; \brief Provides parameters and physical constants for use throughout the
+!! code.
+MODULE Parameters_m
+   INTEGER, PARAMETER :: wp = SELECTED_REAL_KIND(8)
+
+   CHARACTER(LEN=10), PARAMETER :: CODE_VER_STRING = "V.001.001"
+   REAL(KIND=wp), PARAMETER :: PI = 3.14159265358979323846264338_wp
+
+END MODULE Parameters_m</pre>
+</div>
+</div>
+<div class="section" id="simulationvars-f90">
+<h2>SimulationVars.F90<a class="headerlink" href="#simulationvars-f90" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!&gt; \file: SimulationVars.F90
+!&gt; \author: Sayop Kim
+
+MODULE SimulationVars_m
+   USE parameters_m, ONLY : wp
+   IMPLICIT NONE
+
+   INTEGER :: jmax, iterMax
+   REAL(KIND=wp), ALLOCATABLE, DIMENSION(:) :: yp, up, y, u, &amp;
+                                               upExac, upExacSS, &amp;
+                                               uExac, uExacSS
+   REAL(KIND=wp) :: t, dt, dy
+   REAL(KIND=wp) :: uTop, distL, nu, theta, tp, dtp, dyp
+   REAL(KIND=wp) :: RMSerrSS, RMSerrUS, RMSlimit
+
+END MODULE SimulationVars_m</pre>
+</div>
+</div>
+<div class="section" id="simulationsetup-f90">
+<h2>SimulationSetup.F90<a class="headerlink" href="#simulationsetup-f90" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!&gt; \file SimulationSetup.F90
+!&gt; \author Sayop Kim
+
+MODULE SimulationSetup_m
+   USE Parameters_m, ONLY: wp
+   IMPLICIT NONE
+
+   PUBLIC :: Initialize, SetupBCIC, SetTimeStep, UpdateNonDimVars, &amp;
+             UpdateDimVars, UpdateVelocity, CalSteadyExactSol, &amp;
+             CalUnSteadyExactSol, CalRMSerrSteady, CalRMSerrUnsteady
+
+CONTAINS
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE Initialize()
+!-----------------------------------------------------------------------------!
+      USE Parameters_m, ONLY: CODE_VER_STRING
+      USE SimulationVars_m, ONLY: t, tp, yp, up, y, u, jmax, uExac, uExacSS, &amp;
+                                  upExac, upExacSS
+      IMPLICIT NONE
+
+      ALLOCATE(yp(jmax))
+      ALLOCATE(up(jmax))
+      ALLOCATE(y(jmax))
+      ALLOCATE(u(jmax))
+      ALLOCATE(uExac(jmax))
+      ALLOCATE(uExacSS(jmax))
+      ALLOCATE(upExac(jmax))
+      ALLOCATE(upExacSS(jmax))
+
+      WRITE(*,'(a)') ""
+      WRITE(*,'(3a)') "### CFD code Version: ", CODE_VER_STRING, "###"
+
+      t = 0.0_wp
+      tp = 0.0_wp
+      y = 0.0_wp
+      yp = 0.0_wp
+      u = 0.0_wp
+      up = 0.0_wp
+      uExac = 0.0_wp
+      uExacSS = 0.0_wp
+   END SUBROUTINE Initialize
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE SetupBCIC()
+!-----------------------------------------------------------------------------!
+!   Setup Boundary Conditions and Initial Conditions
+!-----------------------------------------------------------------------------!
+      USE Parameters_m, ONLY: PI
+      USE SimulationVars_m, ONLY: y, u, dy, &amp;
+                                  jmax, yp, up, distL, dyp, uTop
+
+      IMPLICIT NONE
+      INTEGER :: j
+
+      WRITE(*,'(a)') ""
+      WRITE(*,'(a)') "### Setup Initial Condition and Boundary Condition"
+
+      ! Set y coordinate and initial condition
+      dy = distL / (jmax - 1)
+      DO j = 1, jmax
+         y(j) = dy * (j - 1)
+         !
+         ! u(y) = u_top * ( y' + sin(pi x y') )
+         !
+         u(j) = uTop * ( y(j)/distL + sin(PI * y(j)/distL) )
+      END DO
+
+      WRITE(*,'(a,g15.6)') "### dy = ", dy
+      CALL UpdateNonDimVars()
+
+   END SUBROUTINE SetupBCIC
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE SetTimeStep(iKill)
+!-----------------------------------------------------------------------------!
+!   Setup computational time step based on Von-Neumann stability analysis
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: dt, dtp, dyp, theta
+
+      IMPLICIT NONE
+      INTEGER :: iKill
+
+      IF(theta .GE. 0.5_wp) THEN
+         WRITE(*,'(a)') ""
+         WRITE(*,'(a)') "### Unconditionally stable!!"
+         WRITE(*,'(a)') "### Input any value of 'dt' in input.dat and rerun!!"
+         iKill = 1
+      ELSE
+         dtp = dyp**2 / 4.0_wp / (0.5_wp - theta)  ! Non-Dimensionalized form
+         CALL UpdateDimVars()
+         WRITE(*,'(a)') ""
+         WRITE(*,'(a)') "### Setup Time Step for stable running"
+         WRITE(*,'(a,g15.6)') "### This scheme is stable if dt is equal to or less than", dt
+         WRITE(*,'(a,g15.6)') "### dt is selected as ", dt
+         WRITE(*,'(a,g15.6)') "### Non-Dimensionalized time step 'dtp' is selected as ", dtp
+         iKill = 0
+      END IF
+   END SUBROUTINE SetTimeStep
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE UpdateNonDimVars()
+!-----------------------------------------------------------------------------!
+!  Update Non-dimensionalized variables from dimensional variables
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: t, dt, y, u, dy, &amp;
+                                  tp, dtp, yp, up, dyp, nu, distL, uTop, &amp;
+                                  upExac, upExacSS, uExac, uExacSS
+
+      IMPLICIT NONE
+      REAL(KIND=wp) :: tau
+
+      tau = distL / nu
+
+      tp = t / tau
+      yp = y / distL
+      up = u / uTop
+      dtp = dt / tau
+      dyp = dy / distL
+      upExac = uExac / uTop
+      upExacSS = uExacSS / uTop
+
+   END SUBROUTINE UpdateNonDimVars
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE UpdateDimVars()
+!-----------------------------------------------------------------------------!
+!  Update dimensionalized variables from Non-dimensional variables
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: t, dt, y, u, dy, &amp;
+                                  tp, dtp, yp, up, dyp, nu, distL, uTop, &amp;
+                                  upExac, upExacSS, uExac, uExacSS
+
+      IMPLICIT NONE
+      REAL(KIND=wp) :: tau
+
+      tau = distL / nu
+
+      t = tp * tau
+      y = yp * distL
+      u = up * uTop
+      dt = dtp * tau
+      dy = dyp * distL
+      uExac = upExac * uTop
+      uExacSS = upExacSS * uTop
+
+   END SUBROUTINE UpdateDimVars
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE UpdateVelocity()
+!-----------------------------------------------------------------------------!
+!   Setup Tri-Diagonal matrix for solving Thomas Loop
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: jmax, dtp, dyp, theta, up
+
+      IMPLICIT NONE
+      INTEGER :: j
+
+      REAL(KIND=wp) :: rr
+      REAL(KIND=wp), DIMENSION(jmax) :: A, B, C, D
+
+      rr = dtp / dyp**2
+      DO j = 1, jmax
+         IF( j == 1 .or. j == jmax ) THEN
+            A(j) = 0.0_wp
+            B(j) = 1.0_wp
+            C(j) = 0.0_wp
+            D(j) = up(j)
+         ELSE
+            A(j) = -rr * theta
+            B(j) = 1.0_wp + 2.0_wp * rr * theta
+            C(j) = -rr * theta
+            D(j) = up(j) + rr * (1.0_wp - theta) * (up(j-1) - 2.0_wp*up(j) +up(j+1))
+         END IF
+      END DO
+
+      ! Call Thomas method solver
+      CALL SY(1, jmax, A, B, C, D)
+
+      DO j = 1, jmax
+         up(j) = D(j)
+      END DO
+   END SUBROUTINE UpdateVelocity
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE SY(IL,IU,BB,DD,AA,CC)
+!-----------------------------------------------------------------------------!
+      IMPLICIT NONE
+      INTEGER, INTENT(IN) :: IL, IU
+      REAL(KIND=wp), DIMENSION(IL:IU), INTENT(IN) :: AA, BB
+      REAL(KIND=wp), DIMENSION(IL:IU), INTENT(INOUT) :: CC, DD
+
+      INTEGER :: LP, I, J
+      REAL(KIND=wp) :: R
+
+      LP = IL + 1
+
+      DO I = LP, IU
+         R = BB(I) / DD(I-1)
+         DD(I) = DD(I) - R*AA(I-1)
+         CC(I) = CC(I) - R*CC(I-1)
+      ENDDO
+
+      CC(IU) = CC(IU)/DD(IU)
+      DO I = LP, IU
+         J = IU - I + IL
+         CC(J) = (CC(J) - AA(J)*CC(J+1))/DD(J)
+      ENDDO
+   END SUBROUTINE SY
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalSteadyExactSol()
+!-----------------------------------------------------------------------------!
+!  Calculate Steady State Solution: used at one time
+!  USE Non-Dimensionalized variables only!
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: upExacSS, yp, jmax
+
+      IMPLICIT NONE
+
+      upExacSS = yp
+      CALL UpdateDimVars
+   END SUBROUTINE CalSteadyExactSol
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalRMSerrSteady()
+!-----------------------------------------------------------------------------!
+!  Calculate RMS error relative to the Steady-State exact solution
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: up, upExacSS, RMSerrSS, jmax
+
+      IMPLICIT NONE
+      INTEGER :: j
+      REAL(KIND=wp) :: rr
+
+      rr = 0.0_wp
+      DO j = 2, jmax - 1
+         rr = rr + (upExacSS(j) - up(j))**2
+      END DO
+      RMSerrSS = (rr / (jmax-2)) ** 0.5_wp
+
+   END SUBROUTINE CalRMSerrSteady
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalRMSerrSteady()
+!-----------------------------------------------------------------------------!
+!  Calculate RMS error relative to the Steady-State exact solution
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: up, upExacSS, RMSerrSS, jmax
+
+      IMPLICIT NONE
+      INTEGER :: j
+      REAL(KIND=wp) :: rr
+
+      rr = 0.0_wp
+      DO j = 2, jmax - 1
+         rr = rr + (upExacSS(j) - up(j))**2
+      END DO
+      RMSerrSS = (rr / (jmax-2)) ** 0.5_wp
+
+   END SUBROUTINE CalRMSerrSteady
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalUnSteadyExactSol()
+!-----------------------------------------------------------------------------!
+!  Calculate Steady State Solution: updated every time step
+!-----------------------------------------------------------------------------!
+      USE Parameters_m, ONLY: PI
+      USE SimulationVars_m, ONLY: up, upExac, tp, yp, jmax
+
+      IMPLICIT NONE
+
+      upExac = yp + sin(PI * yp) * exp(-PI**2 * tp)
+      CALL UpdateDimVars
+   END SUBROUTINE CalUnSteadyExactSol
+
+!-----------------------------------------------------------------------------!
+   SUBROUTINE CalRMSerrUnSteady()
+!-----------------------------------------------------------------------------!
+!  Calculate RMS error relative to the Steady-State exact solution
+!-----------------------------------------------------------------------------!
+      USE SimulationVars_m, ONLY: up, upExac, RMSerrUS, jmax
+
+      IMPLICIT NONE
+      INTEGER :: j
+      REAL(KIND=wp) :: rr
+
+      rr = 0.0_wp
+      DO j = 2, jmax - 1
+         rr = rr + (upExac(j) - up(j))**2
+      END DO
+      RMSerrUS = (rr / (jmax-2)) ** 0.5_wp
+
+   END SUBROUTINE CalRMSerrUnSteady
+END MODULE SimulationSetup_m</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">main directory</a><ul>
+<li><a class="reference internal" href="#cmakelists-txt">CMakeLists.txt</a></li>
+<li><a class="reference internal" href="#main-f90">main.F90</a></li>
+<li><a class="reference internal" href="#parameters-f90">Parameters.F90</a></li>
+<li><a class="reference internal" href="#simulationvars-f90">SimulationVars.F90</a></li>
+<li><a class="reference internal" href="#simulationsetup-f90">SimulationSetup.F90</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../io/srcs.html"
+                        title="previous chapter">io directory</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/FortranSrcs/main/srcs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../io/srcs.html" title="io directory"
+             >previous</a> |</li>
+        <li><a href="../../index.html">CouetteFlow 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Sayop Kim.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

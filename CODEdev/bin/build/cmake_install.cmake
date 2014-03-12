@@ -1,4 +1,4 @@
-# Install script for directory: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src
+# Install script for directory: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,8 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/main/cmake_install.cmake")
-  INCLUDE("/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/io/cmake_install.cmake")
+  INCLUDE("/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/main/cmake_install.cmake")
+  INCLUDE("/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/io/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -45,7 +45,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/bin/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/bin/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

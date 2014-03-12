@@ -6,7 +6,7 @@
 Documentation for Couette Flow problem
 ======================================
 
-This documentation pages are made for CFD class at Georgia Tech in 2014 Spring. This is online available at http://CouetteFlow.readthedocs.org
+This documentation pages are made for CFD class at Georgia Tech in 2014 Spring. This is online available at http://CouetteFlow.readthedocs.org. To view the movies, please visit this web site.
 
 Author: Sayop Kim(sayopkim@gatech.edu)
 

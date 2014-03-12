@@ -1,4 +1,4 @@
-# Install script for directory: /data/ksayop/GitHub.Clone/CouetteFlow/CODEdev/src/main
+# Install script for directory: /home/sayop/data/Devel/GitHub.Clones/CouetteFlow/CODEdev/src/main
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
