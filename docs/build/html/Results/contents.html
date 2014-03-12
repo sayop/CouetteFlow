@@ -144,24 +144,42 @@
 <h3>1) <span class="math">\(\theta\)</span> = 0 (Fully explicit)<a class="headerlink" href="#fully-explicit" title="Permalink to this headline">¶</a></h3>
 <p>According to the above relation, for <span class="math">\(\theta = 0\)</span>, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for three different time step cases: (1) ensurely stable time step, (2). maximum time step and (3). slightly bigger time-step than the maximum value. If you can&#8217;t see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: <a class="reference external" href="http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7">http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7</a></p>
 <p>The figure below is the case with <span class="math">\(dt'\)</span> = 0.0001 that is ensured for the stability for fully explicit scheme.</p>
+<ul>
+<li><p class="first"><span class="math">\(dt' = 0.0001\)</span></p>
 <ul class="simple">
-<li><span class="math">\(dt' = 0.0001\)</span></li>
+<li>RMS error</li>
 </ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.0001.png"><img alt="../_images/RMSlog_7_0.0001.png" src="../_images/RMSlog_7_0.0001.png" style="width: 80%;" /></a>
+</li>
+</ul>
 <p>In this condition, the time step should not be over 0.0002 in order to obtain the stable solution. The following figures and movies prove the stability criterion in terms of time-step.</p>
+<ul>
+<li><p class="first"><span class="math">\(dt' = 0.0002\)</span></p>
 <ul class="simple">
-<li><span class="math">\(dt' = 0.0002\)</span></li>
+<li>RMS error</li>
 </ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.0002.png"><img alt="../_images/RMSlog_7_0.0002.png" src="../_images/RMSlog_7_0.0002.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li>Movie of velocity profile (online available)</li>
+</ul>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0_0.0002.gif"><img alt="../_images/Vel_7_theta0_0.0002.gif" src="../_images/Vel_7_theta0_0.0002.gif" style="width: 80%;" /></a>
+</li>
+</ul>
 <p>Even the slightly bigger
 time-step causes the unstable solution and thus, the RMS error is taken off and goes to infinity after a
 certain number of iteration.</p>
+<ul>
+<li><p class="first"><span class="math">\(dt' = 0.000201\)</span></p>
 <ul class="simple">
-<li><span class="math">\(dt' = 0.000201\)</span></li>
+<li>RMS error</li>
 </ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.000201.png"><img alt="../_images/RMSlog_7_0.000201.png" src="../_images/RMSlog_7_0.000201.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li>Movie of velocity profile (online available)</li>
+</ul>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0_0.000201.gif"><img alt="../_images/Vel_7_theta0_0.000201.gif" src="../_images/Vel_7_theta0_0.000201.gif" style="width: 80%;" /></a>
+</li>
+</ul>
 </div>
 <div class="section" id="crank-nicolson-scheme">
 <h3>2) <span class="math">\(\theta\)</span> = 1/2 (Crank-Nicolson scheme)<a class="headerlink" href="#crank-nicolson-scheme" title="Permalink to this headline">¶</a></h3>
@@ -215,12 +233,22 @@ certain number of iteration.</p>
 <li><span class="math">\(dt' = 0.0001\)</span></li>
 </ul>
 <p>The movies shown below is to show the velocity profile calculated by the present numerical solution and analytic solution. In this case, sufficiently small time-steps can ensure the physically proper behavior of the numerical solution.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Movie of velocity profile (online available)</li>
+</ul>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0.5_0.0001.gif"><img alt="../_images/Vel_7_theta0.5_0.0001.gif" src="../_images/Vel_7_theta0.5_0.0001.gif" style="width: 80%;" /></a>
+</div></blockquote>
 <ul class="simple">
 <li><span class="math">\(dt' = 1000\)</span></li>
 </ul>
 <p>As already mentioned above, since the given <span class="math">\(\theta\)</span> condition gives the stable solution, the improperly big time-step give rise to the extremely long period to have convergence. The second movie below shows the abnormal behavior of velocity profile. This may have to be involved with the inaccurate time gradient due to the big time-step, thus it leads to the negative velocity instantaneously and fluctuation of velocity profile.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Movie of velocity profile (online available)</li>
+</ul>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0.5_1000.gif"><img alt="../_images/Vel_7_theta0.5_1000.gif" src="../_images/Vel_7_theta0.5_1000.gif" style="width: 80%;" /></a>
+</div></blockquote>
 </div>
 <div class="section" id="fully-implicit">
 <h3>3) <span class="math">\(\theta\)</span> = 1 (Fully implicit)<a class="headerlink" href="#fully-implicit" title="Permalink to this headline">¶</a></h3>

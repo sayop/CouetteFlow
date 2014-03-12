@@ -154,33 +154,49 @@ The figure below is the case with :math:`dt'` = 0.0001 that is ensured for the s
 
 - :math:`dt' = 0.0001`
 
-.. image:: ./images/RMSlog_7_0.0001.png
-   :width: 80%
+  - RMS error
+
+  .. image:: ./images/RMSlog_7_0.0001.png
+     :width: 80%
+
 
 In this condition, the time step should not be over 0.0002 in order to obtain the stable solution. The following figures and movies prove the stability criterion in terms of time-step.
 
+
 - :math:`dt' = 0.0002`
 
-.. image:: ./images/RMSlog_7_0.0002.png
-   :width: 80%
+
+  - RMS error
+
+  .. image:: ./images/RMSlog_7_0.0002.png
+     :width: 80%
 
 
-.. image:: ./images/Vel_7_theta0_0.0002.gif
-   :width: 80%
+
+  - Movie of velocity profile (online available)
+
+  .. image:: ./images/Vel_7_theta0_0.0002.gif
+     :width: 80%
 
 
 Even the slightly bigger
 time-step causes the unstable solution and thus, the RMS error is taken off and goes to infinity after a
 certain number of iteration.
 
+
 - :math:`dt' = 0.000201`
 
-.. image:: ./images/RMSlog_7_0.000201.png
-   :width: 80%
+  - RMS error
+
+  .. image:: ./images/RMSlog_7_0.000201.png
+     :width: 80%
 
 
-.. image:: ./images/Vel_7_theta0_0.000201.gif
-   :width: 80%
+
+  - Movie of velocity profile (online available)
+
+  .. image:: ./images/Vel_7_theta0_0.000201.gif
+     :width: 80%
 
 
 
@@ -222,15 +238,25 @@ The stability check can be done by looking at the movies as a function of differ
 
 The movies shown below is to show the velocity profile calculated by the present numerical solution and analytic solution. In this case, sufficiently small time-steps can ensure the physically proper behavior of the numerical solution.
 
-.. image:: ./images/Vel_7_theta0.5_0.0001.gif
-   :width: 80%
+
+  - Movie of velocity profile (online available)
+
+  .. image:: ./images/Vel_7_theta0.5_0.0001.gif
+     :width: 80%
+
+
 
 - :math:`dt' = 1000`
 
 As already mentioned above, since the given :math:`\theta` condition gives the stable solution, the improperly big time-step give rise to the extremely long period to have convergence. The second movie below shows the abnormal behavior of velocity profile. This may have to be involved with the inaccurate time gradient due to the big time-step, thus it leads to the negative velocity instantaneously and fluctuation of velocity profile.
 
-.. image:: ./images/Vel_7_theta0.5_1000.gif
-   :width: 80%
+
+  - Movie of velocity profile (online available)
+
+  .. image:: ./images/Vel_7_theta0.5_1000.gif
+     :width: 80%
+
+
 
 3) :math:`\theta` = 1 (Fully implicit)
 ++++++++++++++++++++++++++++++++++++++
