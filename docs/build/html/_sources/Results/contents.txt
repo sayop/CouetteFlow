@@ -106,11 +106,23 @@ F) Result #6
 
 **Q.** For :math:`\theta = 0`, present a graph which clearly shows the progression of velocity profiles during the flow development when :math:`\text{jmax} = 51`. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for :math:`\theta = 1/2` and :math:`\theta = 1`.
 
+
+In this problem, the time step was employed as :math:`\Delta t'` = 0.0002 in order to have stable convergence for every :math:`\theta` cases. This time step was then applied to the other :math:`\theta` cases. As the following three figures show, the numerical solution well follows the analytical solution in both time and spatial domain.
+
+
+1) :math:`\theta` = 0:
+
 .. image:: ./images/Vel_6_theta0.png
    :width: 80%
 
+
+2) :math:`\theta` = 0.5
+
 .. image:: ./images/Vel_6_theta0.5.png
    :width: 80% 
+
+
+3) :math:`\theta` = 1
 
 .. image:: ./images/Vel_6_theta1.png
    :width: 80%
@@ -131,17 +143,21 @@ In the case of conditionally stable scheme, the maximum time step can be determi
 .. math:: 
    \Delta t \leqslant \frac{\Delta y^{2}}{4\left ( \frac{1}{2}-\theta \right )}
 
-Thus, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value. If you can't see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7
 
 
 1) :math:`\theta` = 0 (Fully explicit)
 ++++++++++++++++++++++++++++++++++++++
+
+According to the above relation, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for three different time step cases: (1) ensurely stable time step, (2). maximum time step and (3). slightly bigger time-step than the maximum value. If you can't see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7
+
+The figure below is the case with :math: `dt'` = 0.0001 that is ensured for the stability for fully explicit scheme.
 
 - :math:`dt' = 0.0001`
 
 .. image:: ./images/RMSlog_7_0.0001.png
    :width: 80%
 
+In this condition, the time step should not be over 0.0002 in order to obtain the stable solution. The following figures and movies prove the stability criterion in terms of time-step.
 
 - :math:`dt' = 0.0002`
 
@@ -152,6 +168,10 @@ Thus, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the
 .. image:: ./images/Vel_7_theta0_0.0002.gif
    :width: 80%
 
+
+Even the slightly bigger
+time-step causes the unstable solution and thus, the RMS error is taken off and goes to infinity after a
+certain number of iteration.
 
 - :math:`dt' = 0.000201`
 
@@ -200,10 +220,14 @@ The stability check can be done by looking at the movies as a function of differ
 
 - :math:`dt' = 0.0001`
 
+The movies shown below is to show the velocity profile calculated by the present numerical solution and analytic solution. In this case, sufficiently small time-steps can ensure the physically proper behavior of the numerical solution.
+
 .. image:: ./images/Vel_7_theta0.5_0.0001.gif
    :width: 80%
 
 - :math:`dt' = 1000`
+
+As already mentioned above, since the given :math:`\theta` condition gives the stable solution, the improperly big time-step give rise to the extremely long period to have convergence. The second movie below shows the abnormal behavior of velocity profile. This may have to be involved with the inaccurate time gradient due to the big time-step, thus it leads to the negative velocity instantaneously and fluctuation of velocity profile.
 
 .. image:: ./images/Vel_7_theta0.5_1000.gif
    :width: 80%
@@ -237,13 +261,24 @@ The stability check can be done by looking at the movies as a function of differ
 | 100000.0                                     | 2                                        |
 +----------------------------------------------+------------------------------------------+
 
-All the tested cases above are stable and the convergence performance is enhanced as the time step increases.
+All the tested cases above are stable and the convergence performance is enhanced as the time step increases. Contrary to the Crank-Nicolson scheme case (:math:`\theta` = 0.5), the pattern of maximum iteration for convergence shows the linearity as a function of time step. Therefore, it can be concluded that the solver follows the theoretical stability behavior.
+
 
 H) Result #8
 ------------
 
 Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of :math:`\theta`. Note: You are not required to derive the TE expression.
 
+.. math::
+   \text{T.E.} = \left [ \left ( \theta - \frac{1}{2} \right ) \Delta t + \frac{\Delta x^{2}}{12} \right ]u_{xxxx} + \left [ \left ( \theta^{2} - \theta + \frac{1}{3} \right )\Delta t^2 + \frac{1}{3} \left ( \theta - \frac{1}{2} \right )\Delta t \Delta x^2 + \frac{1}{360} \Delta x^{4} \right ] u_{xxxxxx} + \cdot \cdot \cdot 
+
+According to the above equation, this combined method of explicit and implicit schemes has order of accuracy in time and space as a function of :math:`\theta`.
+
+1) :math:`\theta` = 1/2 (Crank-Nicolson scheme): :math:`\text{T.E.} = O\left [ (\Delta t)^{2}, (\Delta x)^{2} \right ]`
+
+2) Simple explicit (:math:`\theta` = 0) and implicit (:math:`\theta` = 1): :math:`\text{T.E.} = O\left [ \Delta t, (\Delta x)^{2} \right ]`
+
+3) Special case (:math:`\theta = \frac{1}{2} - \frac{(\Delta x)^{2}}{12\Delta t}`): :math:`\text{T.E.} = O \left [ (\Delta t)^{2}, (\Delta x)^{4} \right ]`
 
 
 I) Result #9
@@ -277,6 +312,8 @@ Investigate the spatial order of accuracy of the code for :math:`\theta` = 1. Do
 .. image:: ./images/peakRMS_9.png
    :width: 80%
 
+
+The previous theoretical analysis of accuracy investigated the order of accuracy in terms of spatial and time step size. For :math:`\theta` = 0, the truncation error is 1st order in time and 2nd order in space. The maximum RMS error for every test cases shows the quantitatively quadratic pattern as a function of spatial step size. Moreover, the smaller time step (here, :math:`\Delta t'` = 0.0002) makes this pattern more distinctive compared to the bigger time step. This is because the smaller time step can reduce the truncation error in time derivative and thus the RMS error is then significantly made by the spatial derivative terms.
 
 J) Result #10
 -------------
@@ -316,3 +353,7 @@ Investigate the temporal order of accuracy of the code for :math:`\theta` = 1 an
 
 .. image:: ./images/peakRMS_10.png
    :width: 80%
+
+The tested results presented above show the accuracy of numerical solution as a function of time step. The previous discussion on the truncation error tells that the fully implicit scheme (:math:`\theta` = 1) follows the 1st order in time. However, it is important to note that this analysis of accuracy is only well followable when the time step is less than :math:`10^{-1}`. This inaccuracy may have come from the spatial derivative order because the currently employed spatial step size is somewhat big enough to cause the truncation error.
+
+more accurate numerical solution when :math:`\theta` value approaches to unity. However, the bigger time-step which is quite over the physically significant time scale should be avoided as already discussed earlier.Comparing two different :math:`\theta` cases proves that the Crank-Nicolson sheme (:math:`\theta` = 1/2) is more likely to ensure the accurate result only if the time step is sufficiently small. Otherwise, the bigger time step makes sure to give more accurate numerical solution when :math:`\theta` value approaches to unity. However, the bigger time-step which is quite over the physically significant time scale should be avoided as already discussed earlier.

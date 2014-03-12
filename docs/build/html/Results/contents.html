@@ -115,8 +115,18 @@
 <div class="section" id="f-result-6">
 <h2>F) Result #6<a class="headerlink" href="#f-result-6" title="Permalink to this headline">¶</a></h2>
 <p><strong>Q.</strong> For <span class="math">\(\theta = 0\)</span>, present a graph which clearly shows the progression of velocity profiles during the flow development when <span class="math">\(\text{jmax} = 51\)</span>. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for <span class="math">\(\theta = 1/2\)</span> and <span class="math">\(\theta = 1\)</span>.</p>
+<p>In this problem, the time step was employed as <span class="math">\(\Delta t'\)</span> = 0.0002 in order to have stable convergence for every <span class="math">\(\theta\)</span> cases. This time step was then applied to the other <span class="math">\(\theta\)</span> cases. As the following three figures show, the numerical solution well follows the analytical solution in both time and spatial domain.</p>
+<ol class="arabic simple">
+<li><span class="math">\(\theta\)</span> = 0:</li>
+</ol>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.png"><img alt="../_images/Vel_6_theta0.png" src="../_images/Vel_6_theta0.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><span class="math">\(\theta\)</span> = 0.5</li>
+</ol>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.5.png"><img alt="../_images/Vel_6_theta0.5.png" src="../_images/Vel_6_theta0.5.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="3">
+<li><span class="math">\(\theta\)</span> = 1</li>
+</ol>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta1.png"><img alt="../_images/Vel_6_theta1.png" src="../_images/Vel_6_theta1.png" style="width: 80%;" /></a>
 </div>
 <div class="section" id="g-result-7">
@@ -130,18 +140,23 @@
 <p>In the case of conditionally stable scheme, the maximum time step can be determined by using below relation so that the scheme is stable with given <span class="math">\(\theta\)</span>.</p>
 <div class="math">
 \[\Delta t \leqslant \frac{\Delta y^{2}}{4\left ( \frac{1}{2}-\theta \right )}\]</div>
-<p>Thus, for <span class="math">\(\theta = 0\)</span>, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for two different time step cases: (1). maximum time step and (2). slightly bigger time-step than the maximum value. If you can&#8217;t see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: <a class="reference external" href="http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7">http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7</a></p>
 <div class="section" id="fully-explicit">
 <h3>1) <span class="math">\(\theta\)</span> = 0 (Fully explicit)<a class="headerlink" href="#fully-explicit" title="Permalink to this headline">¶</a></h3>
+<p>According to the above relation, for <span class="math">\(\theta = 0\)</span>, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for three different time step cases: (1) ensurely stable time step, (2). maximum time step and (3). slightly bigger time-step than the maximum value. If you can&#8217;t see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: <a class="reference external" href="http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7">http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7</a></p>
+<p>The figure below is the case with :math: <cite>dt&#8217;</cite> = 0.0001 that is ensured for the stability for fully explicit scheme.</p>
 <ul class="simple">
 <li><span class="math">\(dt' = 0.0001\)</span></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.0001.png"><img alt="../_images/RMSlog_7_0.0001.png" src="../_images/RMSlog_7_0.0001.png" style="width: 80%;" /></a>
+<p>In this condition, the time step should not be over 0.0002 in order to obtain the stable solution. The following figures and movies prove the stability criterion in terms of time-step.</p>
 <ul class="simple">
 <li><span class="math">\(dt' = 0.0002\)</span></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/RMSlog_7_0.0002.png"><img alt="../_images/RMSlog_7_0.0002.png" src="../_images/RMSlog_7_0.0002.png" style="width: 80%;" /></a>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0_0.0002.gif"><img alt="../_images/Vel_7_theta0_0.0002.gif" src="../_images/Vel_7_theta0_0.0002.gif" style="width: 80%;" /></a>
+<p>Even the slightly bigger
+time-step causes the unstable solution and thus, the RMS error is taken off and goes to infinity after a
+certain number of iteration.</p>
 <ul class="simple">
 <li><span class="math">\(dt' = 0.000201\)</span></li>
 </ul>
@@ -199,10 +214,12 @@
 <ul class="simple">
 <li><span class="math">\(dt' = 0.0001\)</span></li>
 </ul>
+<p>The movies shown below is to show the velocity profile calculated by the present numerical solution and analytic solution. In this case, sufficiently small time-steps can ensure the physically proper behavior of the numerical solution.</p>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0.5_0.0001.gif"><img alt="../_images/Vel_7_theta0.5_0.0001.gif" src="../_images/Vel_7_theta0.5_0.0001.gif" style="width: 80%;" /></a>
 <ul class="simple">
 <li><span class="math">\(dt' = 1000\)</span></li>
 </ul>
+<p>As already mentioned above, since the given <span class="math">\(\theta\)</span> condition gives the stable solution, the improperly big time-step give rise to the extremely long period to have convergence. The second movie below shows the abnormal behavior of velocity profile. This may have to be involved with the inaccurate time gradient due to the big time-step, thus it leads to the negative velocity instantaneously and fluctuation of velocity profile.</p>
 <a class="reference internal image-reference" href="../_images/Vel_7_theta0.5_1000.gif"><img alt="../_images/Vel_7_theta0.5_1000.gif" src="../_images/Vel_7_theta0.5_1000.gif" style="width: 80%;" /></a>
 </div>
 <div class="section" id="fully-implicit">
@@ -251,12 +268,20 @@
 </tr>
 </tbody>
 </table>
-<p>All the tested cases above are stable and the convergence performance is enhanced as the time step increases.</p>
+<p>All the tested cases above are stable and the convergence performance is enhanced as the time step increases. Contrary to the Crank-Nicolson scheme case (<span class="math">\(\theta\)</span> = 0.5), the pattern of maximum iteration for convergence shows the linearity as a function of time step. Therefore, it can be concluded that the solver follows the theoretical stability behavior.</p>
 </div>
 </div>
 <div class="section" id="h-result-8">
 <h2>H) Result #8<a class="headerlink" href="#h-result-8" title="Permalink to this headline">¶</a></h2>
 <p>Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of <span class="math">\(\theta\)</span>. Note: You are not required to derive the TE expression.</p>
+<div class="math">
+\[\text{T.E.} = \left [ \left ( \theta - \frac{1}{2} \right ) \Delta t + \frac{\Delta x^{2}}{12} \right ]u_{xxxx} + \left [ \left ( \theta^{2} - \theta + \frac{1}{3} \right )\Delta t^2 + \frac{1}{3} \left ( \theta - \frac{1}{2} \right )\Delta t \Delta x^2 + \frac{1}{360} \Delta x^{4} \right ] u_{xxxxxx} + \cdot \cdot \cdot\]</div>
+<p>According to the above equation, this combined method of explicit and implicit schemes has order of accuracy in time and space as a function of <span class="math">\(\theta\)</span>.</p>
+<ol class="arabic simple">
+<li><span class="math">\(\theta\)</span> = 1/2 (Crank-Nicolson scheme): <span class="math">\(\text{T.E.} = O\left [ (\Delta t)^{2}, (\Delta x)^{2} \right ]\)</span></li>
+<li>Simple explicit (<span class="math">\(\theta\)</span> = 0) and implicit (<span class="math">\(\theta\)</span> = 1): <span class="math">\(\text{T.E.} = O\left [ \Delta t, (\Delta x)^{2} \right ]\)</span></li>
+<li>Special case (<span class="math">\(\theta = \frac{1}{2} - \frac{(\Delta x)^{2}}{12\Delta t}\)</span>): <span class="math">\(\text{T.E.} = O \left [ (\Delta t)^{2}, (\Delta x)^{4} \right ]\)</span></li>
+</ol>
 </div>
 <div class="section" id="i-result-9">
 <h2>I) Result #9<a class="headerlink" href="#i-result-9" title="Permalink to this headline">¶</a></h2>
@@ -320,6 +345,7 @@
 </tbody>
 </table>
 <a class="reference internal image-reference" href="../_images/peakRMS_9.png"><img alt="../_images/peakRMS_9.png" src="../_images/peakRMS_9.png" style="width: 80%;" /></a>
+<p>The previous theoretical analysis of accuracy investigated the order of accuracy in terms of spatial and time step size. For <span class="math">\(\theta\)</span> = 0, the truncation error is 1st order in time and 2nd order in space. The maximum RMS error for every test cases shows the quantitatively quadratic pattern as a function of spatial step size. Moreover, the smaller time step (here, <span class="math">\(\Delta t'\)</span> = 0.0002) makes this pattern more distinctive compared to the bigger time step. This is because the smaller time step can reduce the truncation error in time derivative and thus the RMS error is then significantly made by the spatial derivative terms.</p>
 </div>
 <div class="section" id="j-result-10">
 <h2>J) Result #10<a class="headerlink" href="#j-result-10" title="Permalink to this headline">¶</a></h2>
@@ -390,6 +416,8 @@
 </tbody>
 </table>
 <a class="reference internal image-reference" href="../_images/peakRMS_10.png"><img alt="../_images/peakRMS_10.png" src="../_images/peakRMS_10.png" style="width: 80%;" /></a>
+<p>The tested results presented above show the accuracy of numerical solution as a function of time step. The previous discussion on the truncation error tells that the fully implicit scheme (<span class="math">\(\theta\)</span> = 1) follows the 1st order in time. However, it is important to note that this analysis of accuracy is only well followable when the time step is less than <span class="math">\(10^{-1}\)</span>. This inaccuracy may have come from the spatial derivative order because the currently employed spatial step size is somewhat big enough to cause the truncation error.</p>
+<p>more accurate numerical solution when <span class="math">\(\theta\)</span> value approaches to unity. However, the bigger time-step which is quite over the physically significant time scale should be avoided as already discussed earlier.Comparing two different <span class="math">\(\theta\)</span> cases proves that the Crank-Nicolson sheme (<span class="math">\(\theta\)</span> = 1/2) is more likely to ensure the accurate result only if the time step is sufficiently small. Otherwise, the bigger time step makes sure to give more accurate numerical solution when <span class="math">\(\theta\)</span> value approaches to unity. However, the bigger time-step which is quite over the physically significant time scale should be avoided as already discussed earlier.</p>
 </div>
 </div>
 
