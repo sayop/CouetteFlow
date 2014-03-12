@@ -98,7 +98,7 @@ E) Result #5
 Thus, the maximum time step to stabilize the scheme is determined as :math:`\Delta t' = 0.0002`.
 
 .. image:: ./images/RMSlog_5.png
-   :width: 80%  
+   :width: 60%  
 
 
 F) Result #6
@@ -113,19 +113,19 @@ In this problem, the time step was employed as :math:`\Delta t'` = 0.0002 in ord
 1) :math:`\theta` = 0:
 
 .. image:: ./images/Vel_6_theta0.png
-   :width: 80%
+   :width: 60%
 
 
 2) :math:`\theta` = 0.5
 
 .. image:: ./images/Vel_6_theta0.5.png
-   :width: 80% 
+   :width: 60% 
 
 
 3) :math:`\theta` = 1
 
 .. image:: ./images/Vel_6_theta1.png
-   :width: 80%
+   :width: 60%
 
 G) Result #7
 ------------
@@ -157,7 +157,7 @@ The figure below is the case with :math:`dt'` = 0.0001 that is ensured for the s
   - RMS error
 
   .. image:: ./images/RMSlog_7_0.0001.png
-     :width: 80%
+     :width: 60%
 
 
 In this condition, the time step should not be over 0.0002 in order to obtain the stable solution. The following figures and movies prove the stability criterion in terms of time-step.
@@ -169,14 +169,14 @@ In this condition, the time step should not be over 0.0002 in order to obtain th
   - RMS error
 
   .. image:: ./images/RMSlog_7_0.0002.png
-     :width: 80%
+     :width: 60%
 
 
 
   - Movie of velocity profile (online available)
 
   .. image:: ./images/Vel_7_theta0_0.0002.gif
-     :width: 80%
+     :width: 60%
 
 
 Even the slightly bigger
@@ -189,14 +189,14 @@ certain number of iteration.
   - RMS error
 
   .. image:: ./images/RMSlog_7_0.000201.png
-     :width: 80%
+     :width: 60%
 
 
 
   - Movie of velocity profile (online available)
 
   .. image:: ./images/Vel_7_theta0_0.000201.gif
-     :width: 80%
+     :width: 60%
 
 
 
@@ -242,7 +242,7 @@ The movies shown below is to show the velocity profile calculated by the present
   - Movie of velocity profile (online available)
 
   .. image:: ./images/Vel_7_theta0.5_0.0001.gif
-     :width: 80%
+     :width: 60%
 
 
 
@@ -254,7 +254,7 @@ As already mentioned above, since the given :math:`\theta` condition gives the s
   - Movie of velocity profile (online available)
 
   .. image:: ./images/Vel_7_theta0.5_1000.gif
-     :width: 80%
+     :width: 60%
 
 
 
@@ -336,7 +336,7 @@ Investigate the spatial order of accuracy of the code for :math:`\theta` = 1. Do
 +------------+--------+----------------------------------------------+----------------------------------------------+
 
 .. image:: ./images/peakRMS_9.png
-   :width: 80%
+   :width: 60%
 
 
 The previous theoretical analysis of accuracy investigated the order of accuracy in terms of spatial and time step size. For :math:`\theta` = 0, the truncation error is 1st order in time and 2nd order in space. The maximum RMS error for every test cases shows the quantitatively quadratic pattern as a function of spatial step size. Moreover, the smaller time step (here, :math:`\Delta t'` = 0.0002) makes this pattern more distinctive compared to the bigger time step. This is because the smaller time step can reduce the truncation error in time derivative and thus the RMS error is then significantly made by the spatial derivative terms.
@@ -378,7 +378,7 @@ J) Result #10
 +-----------+-------------------------------------+---------------------------------------+
 
 .. image:: ./images/peakRMS_10.png
-   :width: 80%
+   :width: 60%
 
 The tested results presented above show the accuracy of numerical solution as a function of time step. The previous discussion on the truncation error tells that the fully implicit scheme (:math:`\theta` = 1) follows the 1st order in time. However, it is important to note that this analysis of accuracy is only well followable when the time step is less than :math:`10^{-1}`. This inaccuracy may have come from the spatial derivative order because the currently employed spatial step size is somewhat big enough to cause the truncation error.
 
