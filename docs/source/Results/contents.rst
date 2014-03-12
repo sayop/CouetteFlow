@@ -110,22 +110,22 @@ F) Result #6
 In this problem, the time step was employed as :math:`\Delta t'` = 0.0002 in order to have stable convergence for every :math:`\theta` cases. This time step was then applied to the other :math:`\theta` cases. As the following three figures show, the numerical solution well follows the analytical solution in both time and spatial domain.
 
 
-1) :math:`\theta` = 0 (Fully explicit scheme): Converged at iteration number of 7990.
+  1) :math:`\theta` = 0 (Fully explicit scheme): Converged at iteration number of 7990.
 
-.. image:: ./images/Vel_6_theta0.png
-   :width: 60%
-
-
-2) :math:`\theta` = 0.5 (Crank-Nicolson scheme): Converged at iteration number of 7998.
-
-.. image:: ./images/Vel_6_theta0.5.png
-   :width: 60% 
+  .. image:: ./images/Vel_6_theta0.png
+     :width: 50%
 
 
-3) :math:`\theta` = 1 (Fully implicit scheme): Converged at iteration number of 8006.
+  2) :math:`\theta` = 0.5 (Crank-Nicolson scheme): Converged at iteration number of 7998.
 
-.. image:: ./images/Vel_6_theta1.png
-   :width: 60%
+  .. image:: ./images/Vel_6_theta0.5.png
+     :width: 50% 
+
+
+  3) :math:`\theta` = 1 (Fully implicit scheme): Converged at iteration number of 8006.
+
+  .. image:: ./images/Vel_6_theta1.png
+     :width: 50%
 
 G) Result #7
 ------------
