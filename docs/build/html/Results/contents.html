@@ -121,15 +121,15 @@
 <p><strong>Q.</strong> For <span class="math">\(\theta = 0\)</span>, present a graph which clearly shows the progression of velocity profiles during the flow development when <span class="math">\(\text{jmax} = 51\)</span>. The plot should show the initial profile, final steady state profile and at least 3 other non-steady-state profiles (i.e. all on the same plot). Overlay the exact numerical velocity profiles on this plot for the same points in time. Create similar plots for <span class="math">\(\theta = 1/2\)</span> and <span class="math">\(\theta = 1\)</span>.</p>
 <p>In this problem, the time step was employed as <span class="math">\(\Delta t'\)</span> = 0.0002 in order to have stable convergence for every <span class="math">\(\theta\)</span> cases. This time step was then applied to the other <span class="math">\(\theta\)</span> cases. As the following three figures show, the numerical solution well follows the analytical solution in both time and spatial domain.</p>
 <ol class="arabic simple">
-<li><span class="math">\(\theta\)</span> = 0:</li>
+<li><span class="math">\(\theta\)</span> = 0 (Fully explicit scheme): Converged at iteration number of 7990.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.png"><img alt="../_images/Vel_6_theta0.png" src="../_images/Vel_6_theta0.png" style="width: 60%;" /></a>
 <ol class="arabic simple" start="2">
-<li><span class="math">\(\theta\)</span> = 0.5</li>
+<li><span class="math">\(\theta\)</span> = 0.5 (Crank-Nicolson scheme): Converged at iteration number of 7998.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta0.5.png"><img alt="../_images/Vel_6_theta0.5.png" src="../_images/Vel_6_theta0.5.png" style="width: 60%;" /></a>
 <ol class="arabic simple" start="3">
-<li><span class="math">\(\theta\)</span> = 1</li>
+<li><span class="math">\(\theta\)</span> = 1 (Fully implicit scheme): Converged at iteration number of 8006.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/Vel_6_theta1.png"><img alt="../_images/Vel_6_theta1.png" src="../_images/Vel_6_theta1.png" style="width: 60%;" /></a>
 </div>
