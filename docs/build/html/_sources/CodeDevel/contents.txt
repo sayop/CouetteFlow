@@ -29,5 +29,5 @@ Details of CouetteFlow development
 The schematic below shows the flow chart of how the CouetteFlow code runs.
 
 .. image:: ./images/chart.png
-   :width: 50%
+   :width: 80%
 
