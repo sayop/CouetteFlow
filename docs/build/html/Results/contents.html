@@ -54,7 +54,7 @@
 <ul>
 <li><p class="first">Non-dimensionalized variables:</p>
 <p><span class="math">\(u' = \frac{u}{u_{top}}\)</span>, <span class="math">\(t' = \frac{t}{\tau}\)</span>, <span class="math">\(y' = \frac{y}{L}\)</span></p>
-<p>where :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>tau = frac{L^{2}}{nu}</p>
+<p>where <span class="math">\(\tau = \frac{L^{2}}{\nu}\)</span></p>
 </li>
 <li><p class="first">Non-dimensionalized governing PDE:</p>
 <p><span class="math">\(\frac{\partial u'}{\partial t'} = \frac{\partial^{2}u'}{\partial y'^{2}}\)</span></p>
@@ -74,7 +74,7 @@
 <div class="section" id="c-result-3">
 <h2>C) Result #3<a class="headerlink" href="#c-result-3" title="Permalink to this headline">¶</a></h2>
 <p><strong>Q.</strong> Provide a brief description of the finite difference scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.</p>
-<p>Given finite difference scheme has a weighting parameter <span class="math">\(\Theta\)</span> to put an effect of implicit solution. If <span class="math">\(\Theta\)</span> is equal to 1, the scheme becomes to fully implicit, otherwise, the scheme can be partially implicit or explicit (<span class="math">\(\Theta\)</span> = 0). Rearranging the given finite difference equation leads to the following simplified form:</p>
+<p>Given finite difference scheme has a weighting parameter <span class="math">\(\theta\)</span> to put an effect of implicit solution. If <span class="math">\(\theta\)</span> is equal to 1, the scheme becomes to fully implicit, otherwise, the scheme can be partially implicit or explicit (<span class="math">\(\theta\)</span> = 0). Rearranging the given finite difference equation leads to the following simplified form:</p>
 <div class="math">
 \[A_{j} u^{n+1}_{j+1} + B_{j} u^{n+1}_{j} + C_{j} u^{n+1}_{j+1} = D_{j}\]</div>
 <p>where</p>
@@ -143,7 +143,7 @@
 <div class="section" id="fully-explicit">
 <h3>1) <span class="math">\(\theta\)</span> = 0 (Fully explicit)<a class="headerlink" href="#fully-explicit" title="Permalink to this headline">¶</a></h3>
 <p>According to the above relation, for <span class="math">\(\theta = 0\)</span>, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for three different time step cases: (1) ensurely stable time step, (2). maximum time step and (3). slightly bigger time-step than the maximum value. If you can&#8217;t see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: <a class="reference external" href="http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7">http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7</a></p>
-<p>The figure below is the case with :math: <cite>dt&#8217;</cite> = 0.0001 that is ensured for the stability for fully explicit scheme.</p>
+<p>The figure below is the case with <span class="math">\(dt'\)</span> = 0.0001 that is ensured for the stability for fully explicit scheme.</p>
 <ul class="simple">
 <li><span class="math">\(dt' = 0.0001\)</span></li>
 </ul>
@@ -273,7 +273,7 @@ certain number of iteration.</p>
 </div>
 <div class="section" id="h-result-8">
 <h2>H) Result #8<a class="headerlink" href="#h-result-8" title="Permalink to this headline">¶</a></h2>
-<p>Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of <span class="math">\(\theta\)</span>. Note: You are not required to derive the TE expression.</p>
+<p><strong>Q.</strong> Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of <span class="math">\(\theta\)</span>. Note: You are not required to derive the TE expression.</p>
 <div class="math">
 \[\text{T.E.} = \left [ \left ( \theta - \frac{1}{2} \right ) \Delta t + \frac{\Delta x^{2}}{12} \right ]u_{xxxx} + \left [ \left ( \theta^{2} - \theta + \frac{1}{3} \right )\Delta t^2 + \frac{1}{3} \left ( \theta - \frac{1}{2} \right )\Delta t \Delta x^2 + \frac{1}{360} \Delta x^{4} \right ] u_{xxxxxx} + \cdot \cdot \cdot\]</div>
 <p>According to the above equation, this combined method of explicit and implicit schemes has order of accuracy in time and space as a function of <span class="math">\(\theta\)</span>.</p>
@@ -349,7 +349,7 @@ certain number of iteration.</p>
 </div>
 <div class="section" id="j-result-10">
 <h2>J) Result #10<a class="headerlink" href="#j-result-10" title="Permalink to this headline">¶</a></h2>
-<p>Investigate the temporal order of accuracy of the code for <span class="math">\(\theta\)</span> = 1 and <span class="math">\(\theta\)</span> = 1/2. Do this by using jmax = 51 and various <span class="math">\(\Delta t'\)</span> (i.e. 0.02, 0.01, 0.005, 0.0025, 0.00125, 0.000625). Make tables and a log-log plots of the peak RMS error (relative to the time-dependent exact solution) as a function <span class="math">\(\Delta t'\)</span> for <span class="math">\(\theta\)</span> = 1 and <span class="math">\(\theta\)</span> = 1/2. Based on these results, discuss whether or not your solver follows the theoretical order of temporal accuracy given by the TE expression for the scheme.</p>
+<p><strong>Q.</strong> Investigate the temporal order of accuracy of the code for <span class="math">\(\theta\)</span> = 1 and <span class="math">\(\theta\)</span> = 1/2. Do this by using jmax = 51 and various <span class="math">\(\Delta t'\)</span> (i.e. 0.02, 0.01, 0.005, 0.0025, 0.00125, 0.000625). Make tables and a log-log plots of the peak RMS error (relative to the time-dependent exact solution) as a function <span class="math">\(\Delta t'\)</span> for <span class="math">\(\theta\)</span> = 1 and <span class="math">\(\theta\)</span> = 1/2. Based on these results, discuss whether or not your solver follows the theoretical order of temporal accuracy given by the TE expression for the scheme.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="13%" />
@@ -358,8 +358,8 @@ certain number of iteration.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>dt</td>
-<td>Peak RMS error (<span class="math">\(\Theta\)</span> = 1)</td>
-<td>Peak RMS error (<span class="math">\(\Theta\)</span> = 1/2)</td>
+<td>Peak RMS error (<span class="math">\(\theta\)</span> = 1)</td>
+<td>Peak RMS error (<span class="math">\(\theta\)</span> = 1/2)</td>
 </tr>
 <tr class="row-even"><td>1000</td>
 <td>0.723888E-04</td>

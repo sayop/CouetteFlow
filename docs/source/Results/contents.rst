@@ -10,7 +10,7 @@ A) Result #1
 
   :math:`u' = \frac{u}{u_{top}}`, :math:`t' = \frac{t}{\tau}`, :math:`y' = \frac{y}{L}`
 
-  where :math:`\tau = \frac{L^{2}}{\nu}
+  where :math:`\tau = \frac{L^{2}}{\nu}`
 
 - Non-dimensionalized governing PDE:
 
@@ -38,7 +38,7 @@ C) Result #3
 
 **Q.** Provide a brief description of the finite difference scheme (in non-dimensional form), the solution method used and exactly how the boundary and initial conditions are applied.
 
-Given finite difference scheme has a weighting parameter :math:`\Theta` to put an effect of implicit solution. If :math:`\Theta` is equal to 1, the scheme becomes to fully implicit, otherwise, the scheme can be partially implicit or explicit (:math:`\Theta` = 0). Rearranging the given finite difference equation leads to the following simplified form:
+Given finite difference scheme has a weighting parameter :math:`\theta` to put an effect of implicit solution. If :math:`\theta` is equal to 1, the scheme becomes to fully implicit, otherwise, the scheme can be partially implicit or explicit (:math:`\theta` = 0). Rearranging the given finite difference equation leads to the following simplified form:
 
 .. math::
    A_{j} u^{n+1}_{j+1} + B_{j} u^{n+1}_{j} + C_{j} u^{n+1}_{j+1} = D_{j}
@@ -150,7 +150,7 @@ In the case of conditionally stable scheme, the maximum time step can be determi
 
 According to the above relation, for :math:`\theta = 0`, the maximum time step should be 0.0002 to make the scheme stable. Following figures show the convergence history for three different time step cases: (1) ensurely stable time step, (2). maximum time step and (3). slightly bigger time-step than the maximum value. If you can't see the movies below, you are seeing the printed version of document. If you want to see the movies, please visit: http://couetteflow.readthedocs.org/en/latest/Results/contents.html#g-result-7
 
-The figure below is the case with :math: `dt'` = 0.0001 that is ensured for the stability for fully explicit scheme.
+The figure below is the case with :math:`dt'` = 0.0001 that is ensured for the stability for fully explicit scheme.
 
 - :math:`dt' = 0.0001`
 
@@ -267,7 +267,7 @@ All the tested cases above are stable and the convergence performance is enhance
 H) Result #8
 ------------
 
-Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of :math:`\theta`. Note: You are not required to derive the TE expression.
+**Q.** Write down an expression(s) for the truncation error (TE) of this finite difference scheme and describe the order of accuracy of the scheme for different values of :math:`\theta`. Note: You are not required to derive the TE expression.
 
 .. math::
    \text{T.E.} = \left [ \left ( \theta - \frac{1}{2} \right ) \Delta t + \frac{\Delta x^{2}}{12} \right ]u_{xxxx} + \left [ \left ( \theta^{2} - \theta + \frac{1}{3} \right )\Delta t^2 + \frac{1}{3} \left ( \theta - \frac{1}{2} \right )\Delta t \Delta x^2 + \frac{1}{360} \Delta x^{4} \right ] u_{xxxxxx} + \cdot \cdot \cdot 
@@ -318,11 +318,11 @@ The previous theoretical analysis of accuracy investigated the order of accuracy
 J) Result #10
 -------------
 
-Investigate the temporal order of accuracy of the code for :math:`\theta` = 1 and :math:`\theta` = 1/2. Do this by using jmax = 51 and various :math:`\Delta t'` (i.e. 0.02, 0.01, 0.005, 0.0025, 0.00125, 0.000625). Make tables and a log-log plots of the peak RMS error (relative to the time-dependent exact solution) as a function :math:`\Delta t'` for :math:`\theta` = 1 and :math:`\theta` = 1/2. Based on these results, discuss whether or not your solver follows the theoretical order of temporal accuracy given by the TE expression for the scheme.
+**Q.** Investigate the temporal order of accuracy of the code for :math:`\theta` = 1 and :math:`\theta` = 1/2. Do this by using jmax = 51 and various :math:`\Delta t'` (i.e. 0.02, 0.01, 0.005, 0.0025, 0.00125, 0.000625). Make tables and a log-log plots of the peak RMS error (relative to the time-dependent exact solution) as a function :math:`\Delta t'` for :math:`\theta` = 1 and :math:`\theta` = 1/2. Based on these results, discuss whether or not your solver follows the theoretical order of temporal accuracy given by the TE expression for the scheme.
 
 
 +-----------+-------------------------------------+---------------------------------------+
-| dt        | Peak RMS error (:math:`\Theta` = 1) | Peak RMS error (:math:`\Theta` = 1/2) |
+| dt        | Peak RMS error (:math:`\theta` = 1) | Peak RMS error (:math:`\theta` = 1/2) |
 +-----------+-------------------------------------+---------------------------------------+
 | 1000      | 0.723888E-04                        | 0.713996                              |
 +-----------+-------------------------------------+---------------------------------------+
